@@ -1,0 +1,59 @@
+OOPERATORI DI ASSEGNAZIONE ARITMETICI
+			     SIMBOLO	    ESEMPIO
+ Addizione			+          4 + 27 = 31
+ Sottrazione	                –         76 – 23 = 53
+ Moltiplicazione                *           4 * 7 = 28
+ Divisione intera               /          10 / 3 = 3  (3 è il n di volte divisibili senza resto)
+ Divisione con modulo           %          11 / 6 = 5    (5 è il resto della divisione)
+			       += x	//aggiungi il valore di x
+			       -= x	//sottrai il valore di x
+----------------------------------------------------------------------------
+OPERATORI DI INCREMENTO 
+	
+	++ 	incrementa il valore di 1
+	-- 	decrementa il valore di 1
+
+	NB. L'ORDINE CONTA!!!
+
+	a=1    -->  b = a++  -->  a=2  b=1
+
+	a=1    -->  b = ++a  -->  a=2  b=2
+-----------------------------------------------------------------------------
+OPERATORI DI ASSEGNAZIONE BIT A BIT
+&=	Operatore di assegnazione AND bit a bit
+|=	Operatore di assegnazione OR bit a bit
+^=	Operatore di assegnazione OR bit a bit
+<<=	Operatore di assegnazione di spostamento a sinistra
+>>=	Operatore di assegnazione di spostamento a destra
+
+-----------------------------------------------------------------------------
+OPERATORI DI CONFRONTO
+Simbolo		Significato		Utilizzo
+  ==		  uguale a		 a == b
+  !=		  diverso da		 a != b
+  <		  minore 		 a < b
+  >		  maggiore		 a > b
+  <=		  minore o uguale	 a <= b
+  >=		  maggiore o uguale	 a >= b
+
+l'operazione restituisce un valore ooleano 
+
+-----------------------------------------------------------------------------
+OPERATORI BITWISE
+Questi operatori lavorano sui singoli bit dei tipi INTERI. 
+
+<< Spostamento di bit a sinistra di un numero specificato di posizioni di bit
+>> Spostamento di bit a destra di un numero specificato di posizioni di bit
+|  OR esclusivo sul singolo bit
+^  OR esclusivo sul singolo bit
+&  AND esclusivo lul bit
+~ NOT esclusivo sul bit
+
+-----------------------------------------------------------------------------
+OPERATORI LOGICI
+Simbolo		Significato		Utilizzo
+&&		AND logico		a && b
+||		OR logico		a || b
+!		NOT logico		!a 	
+   
+------------------------------------------------------------------------------

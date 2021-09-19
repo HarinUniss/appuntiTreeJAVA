@@ -1,0 +1,254 @@
+VARIABILI
+
+	//dichiarazione
+	int nomeVariabile;
+
+	//inizializzazione
+	nomeVariabile = 12;
+
+	//dichiarazione + inizializzazione
+	Strng nomeStringa = "qualcosa";
+
+COSTANTI 
+	final 	per dichiarare una variabile che potrà essere inizializzata una sola volta.
+	
+	static final       costante
+
+	static final int NUMERO_CARTE = 40;
+
+-----------------------------------------------------------------------------
+
+TIPI DI DATI PRIMITIVI
+			n bits	
+	boolean		1	true o false
+
+	byte 		8	positivo o negativo
+	short		16	positivo o negativo
+	int		32	positivo o negativo
+	long		64	positivo o negativo
+	float		32	(max 7 cifre decimali)   'f' alla fine per far capire al compilatore ch'è un vavolre di tipo float
+	double		64	(max 12 cifre decimali)  'd' alla fine per far capire al compilatore ch'è un vavolre di tipo double
+
+
+	char		16	senza segno, UNICODE 
+
+------------------------------------------------------------------------------
+
+OPERATORI ARITMETICI
+
+    	=  uguale ;
+    	+  addition ;
+    	-  soustraction ;
+    	*  multiplication ;
+    	/  division.
+
+    //aggiungere 100 alla variabile int x
+        x = x +100;
+        x += 100;
+    //sottrarre 100 alla variabile x
+        x = x -100
+        x -= 100
+    //moltiplicare x per 100
+        x = x*100
+        x *= 100
+    //dividere x per 100
+        x = x/100
+        x /= 100
+
+    Divisione
+            int a = 10;
+            int b = 4;
+            int c = a/b; 	//--> c=2   //senza virgola!!!
+
+            double c = a/b; 	//--> c=2    //senza virgola!!!
+
+         //per non perdere la virgola dovró porre almeno una delle variabili come double
+            int a = 10;
+            double b = 4;
+            int c = a/b;   	//--> c=2,5   (c'é la parte decimale!!!!!!)
+
+OPERATORI ABBREVIATI
+
+    Vale lo stesso per ogni operatore binario (es. -, *, /)
+        a = a+5;  oppure    a += 5;
+
+
+    X++; // valuta X, poi incrementa X di 1
+    X--; // valuta X, poi decrementa X di 1
+    ++X; // incrementa X di 1, poi valuta X
+    --X; // decrementa X di 1, poi valuta X
+
+
+
+
+----------------------------------------------------------------------
+VALORI BOLEANI
+    contenere solo due valori: true o false.
+
+    true (valore diverso da 0)
+    false (valore uguale a 0)
+
+    boolean valore1 = true;
+    boolean valore2 = false;
+
+
+OPERATORI DI CONFRONTO
+
+    ==  uguale a (esattamente lo stesso);
+    !=  non uguale a (diverso, in alcun modo);
+    <   Meno
+    <=  minore o uguale a;
+    >   superiore a
+    >=  superiore o uguale a.
+
+
+OPERATORI LOGICI
+
+    &&  AND/e
+    ||  OR/oppure
+    !   NOT/negato
+
+OPERATORI BITWISE
+     Operatore	Descrizione	                        espressione	    Cosa restituisce
+     &	        and ‘bit a bit’	                        x&y	        and tra i bit di x e y
+     |	        or ‘bit a bit’	                        x|y	        or tra i bit di x e y
+     ^	        xor (o or esclusivo) ‘bit a bit’	    x^y	        xor tra i bit di x e y (lo xor ritorna true (o il bit 1) solo se uno degli operandi è vero e l’altro è falso)
+     >>  <<	    shift destro (o sinistro) con segno	    x>>y	    sposta i bit della variabile x verso destra (o sinistra) di y posizioni, preservando il bit di segno. Con lo slittamento a DESTRA le cose cambiano perché coinvolge l’ultimo bit che è speciale, in quanto rappresenta il segno
+     >>>	    shift destro senza segno	            x>>>y	    sposta i bit della variabile x verso destra di y posizioni, senza considerare il bit di segno (vengono aggiunti sempre 0 a sinistra)
+     ~	        complemento	                            ~x	        inverte tutti i bit della variabile x (gli 0 diventano 1 e viceversa)
+
+
+----------------------------------------------------------------------------------
+
+CONVERTIRE UNA VARIABILE
+
+    	int a = 10;
+    	double b = 4;
+
+    //considero b come un int
+
+        double c = a/ (int) b;;  //--> c= 2
+
+    // considero a come un double
+
+        double c = (double) a / (int) b;;  //--> c= 2,5
+
+	
+-------------------------------------------------------------------------------
+VARIABILI DI TIPO OGGETTO 
+	classi che definiscono un tipo di dato complesso 
+
+
+OGGETTO	      
+	La variabile (Classe) di tipo oggetto può prender in pasto qualsiasi 
+	variabile o clssi o metodi, in pratica tutto!
+
+	Object oggetto;  //dichiarazione
+------------------------------------------------------------------------
+
+CLASSI WRAPPER 
+	classi che definiscono un tipo primitivo 
+	e danno la possibilità di trattarli coni dei metodi 
+	perche sono a tutti gli effetti degli oggetti 
+
+	Byte
+	Short
+	Integer
+	Long
+	Float
+	Double
+	Character
+	Boolean	
+
+ 
+
+----------------------------------------------------------------------
+STRINGA
+	String 	
+		tabella di caratteri
+		
+		String r = “rosso”;	//dichiarazione e inizializzazione
+		
+		charAt()		egge il carattere in posizione n
+		equals()		verifica se le due stringhe sono uguali 
+				
+		contains("A")		verifica se la stringa contiene A
+		startsWith("Ciao") 	verifica se la stringa inizia con Ciao 
+		endsWith("Z")		verifica se la stringa finisce con Z
+		
+		concat(stringa2)	concatena la stringa con la stringa2
+
+		equals()		verifica se le due stringhe sono uguali 		
+		compareTo()		compara due stringhe lessicograficamente 
+		compareToIgnoreCase()	ignorando le differenze tra maiuscole e minuscole.
+
+		substring( 1, 5)	crea una sottostringa che va da posizione 1 a 5 
+		toLowerCase()  		rende tutti i caratteri minuscoli
+		toUpperCase()   	rende tutti i caratteri maiuscoli
+		
+		isEmpty()  		verifica se la stringa è vuota
+		trim()  		eliminare il primo e l’ultimo carattere se è uno spazio
+		indexOf("f")  		restituisce l'indice (posizione) del carattere dato in input 
+		substring(A) 		resituisce la sottoStringa da A fino alla fine della stringa
+		replaceAll("e","") 	sostituisce i caratteri ‘e’ con "" eliminando di conseguenza la e
+			alternativa 
+					String messaggio = "Ciao XX";   //inizializzo la string  con "Ciao XX"
+					messaggio = messaggio( "XX" , "Mondo" );    //scambia la string "XX" con "Mondo"
+
+
+
+		length()  		restituisce la lunghezza della stringa
+		split(" ")		divide una stringa in una matrice di sottostringhe e restituisce la nuova matrice		
+					Se come separatore viene utilizzata una stringa vuota ("") , la stringa viene divisa tra ogni carattere.
+		
+		trim()	                ritorna una copia della stringa di partenza eliminando tutti gli spazi bianchi all’inizio e alla fine della stringa
+
+
+-----------------------------------------------------------------------
+SOMMA TRA DUE STRINGHE
+
+        String frase1 = "Salve mondo!!!";
+        String frase2 = "Come va?";
+        String sommaStringhe = frase1 + frase2 ;   //--> sommaStringhe = "Salve mondo!!!Come va?" NB. NON ci sono spazi tra una stringa e un altra!!!!!
+
+    //per ottenere degli spazi devo aggiungerli io con " "
+
+        String sommaStringhe = frase1 " " + frase2 ;   //--> sommaStringhe = "Salve mondo!!! Come va?"
+
+
+OPERATORE DI CONCATENAMENTO +
+
+       String a = "Pietro " ;
+       String b = a + "Castellu";
+       String b += "cci"
+
+       Il risultato sarà "Pietro Castellucci"
+
+
+    //posso anche mischiare dei carattteri con altri tipi e convertirli tutti in una stringa
+    //UTILIZZANDO L'OPERATORE + posso concatenare delle stringhe di caratteri e delle variabili numeriche.
+        
+	String favoriteCity = "Buenos Aires";
+        int numeroDiVolte = 5;
+
+        String frase = "Sono andato a " + favoriteCity + " " + numeroDiVolte + " volte!";   	//--> frase = "I've traveled to Buenos Aires 5 times!"
+
+
+-----------------------------------------------------------------------
+CARATTERI UNICODE ED ESSCAPE
+    I valori di tipo carattere possono essere espressi per mezzo di caratteri Unicode racchiusi tra apici singoli
+
+       char nCirconflesso = 'ñ';
+
+       char nCorconflessoCode = '\u00F1';
+
+    Sequenze di escape
+        Escape	Carattere
+        \b	    backspace (indietro)
+        \t	    tab
+        \n	    line feed (fine linea)
+        \f	    form feed (fine pagina / nuova pagina)
+        \r	    carriage return (ritorno carrello / a capo)
+        \’	    apice singolo
+        \”	    doppio apice
+        \\	    backslash (\)

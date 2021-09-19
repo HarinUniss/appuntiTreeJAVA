@@ -1,0 +1,93 @@
+• List: collezione di elementi organizzati in sequenza (lista) 
+• Set: collezione di elementi univoci (insieme) 
+• Map: collezione di elementi con una chiave di accesso (mappa)
+
+
+Lista definizione
+
+Una lista è una collezioni di elementi concettualmente in sequenza: 
+• Mantiene l’ordine di inserimento degli elementi. 
+• La dimensione della lista non è fissa e può variare dinamicamente all’occorrenza. 
+• Può contenere oggetti duplicati
+
+Ogni nodo della lista è composto da due parti: 
+• un valore
+• un riferimento al nodo successivo
+
+
+Le implementazioni più utilizzate sono: 
+
+• ArrayList: 
+	è una lista basata sugli array, ma che permette di avere dimensione variabile 
+	aumentando e diminuendo automaticamente la capacità.
+
+	performante nella manipolazione 
+
+• LinkedList: 
+	è una lista in cui ogni nodo è doppiamente collegato sia al precedente che al successivo. 
+	
+	performante nell'aggiunta e rimozione di elementi
+
+
+LIBRERIE DA IMPORTARE
+		import java.util.ArrayList;
+		import java.util.LinkedList;
+
+DICHIARAZIONE
+		ArrayList<Integer> myList1 = new ArrayList<>();
+		LinkedList<Integer> myList2 = new LinkedList<>();
+
+
+lista.add(element); 		Aggiunge alla lista un elemento in ultima posizione
+lista.add(index, element); 	Aggiunge alla lista un elemento nella posizione specificata (indice)
+lista.addAll(lista2); 		Aggiunge tutti gli elementi della lista2 nella lista
+lista.get(index); 		Recupera l’element della posizione specificata
+lista.set(index,value); 	Sostituisce l’element nella posizione specificata con il valore passato
+lista.indexOf(element); 	Recupera la posizione dell’element
+lista.size(); 			Indica la dimensione della lista (numero di elementi)
+lista.isEmpty(); 		Indica se la lista è vuota o piena
+lista.clear(); 			Svuota la lista
+lista.remove(index); 		Rimuove l’element che si trova in una determinata posizione
+lista.forEach(..) 		Permette di iterare gli elementi della lista
+lista.toArray(); 		Trasforma la lista in un array
+
+
+
+
+ITERAZIONE LISTE
+	
+	for ( int i = 0 ; i < lista.size(); i++){
+	     System.out.println( lista.get(i) );
+	}
+
+
+	for ( Integer valore : lista ){
+	     System.out.println(valore);
+	}
+
+
+	lista.forEach( valore ->{
+	     System.out.println(valore);	
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

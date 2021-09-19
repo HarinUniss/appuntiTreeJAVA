@@ -1,0 +1,34 @@
+Enumerazioni
+
+    Tipo Enum
+
+    modo per vincolare una variabile a poter assumere solo un determinato set di valori.
+
+        public enum Giorno {
+            LUNEDI,
+            MARTEDI,
+            MERCOLEDI,
+            GIOVEDI,
+            VENERDI,
+            SABATO,
+            DOMENICA // opzionalmente può terminare con ";"
+        }
+
+        Giorno giornoDellaSettimana = Giorno.VENERDI;   // definisco una variabile di tipo giorno e ci metto dentro VENERDI
+
+
+METODI UTILI
+	values()    // ritorna un array di tutti i possibili valori che
+                	// potranno assumere le variabili cha varanno come tipo l’enum
+
+        	for( Giorno nomeVariabile : Giorno.values() ) {   //stamperebbe tutti i nomi dei giorni della settimana
+            		System.err.println(nomeVariabile);
+        	}
+
+
+    	valueOf()
+
+        	Giorno g = Giorno.valueOf("SABATO");    //assegnerà alla variabile g il valore Giorno.SABATO
+
+                	ATTENZINE la stringa "SABATO" deve contenere gli stessi caratteri contenenti in enum Giorno
+                          	non puo essere SabAto e bisogna evitare anche possibili spazi

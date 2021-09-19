@@ -1,0 +1,38 @@
+/* FASE DI COMPILAZIONE DA TERMINALE  */
+
+              1. Compilare il programma con il comando javac.
+
+                  $ javac conditions/ConditionalHello.java
+
+              2. Eseguire il programma senza argomenti.
+
+                  $ java conditions/ConditionalHello
+                  Ciao tizio che non so chi sei!
+                  $
+
+              3. Eseguire il programma aggiungendo "Mario" dopo il nome della classe.
+
+              $java conditions/ConditionalHello Mario
+              Ciao Mario!
+              $
+
+---------------------------------------------------------------------------------
+COMPILARE LA FUNZIONE DA TERMINALE
+    LINUX:
+    andare nella cartella radice (root) e digitare:
+        $ javac hello∖HelloWorld.java
+    WINDOWS:
+        andare nella cartella radice (root) e digitare:
+            $ javac.exe hello∖HelloWorld.java
+
+ESSEGUIRE LA FUNZIONE DA TERMINALE
+    eseguire il file generato con l'operazione pecedente
+
+    LINUX:
+    andare nella cartella radice (root) e digitare:
+        $ Java hello.HelloWorld
+        //risultato Hello World!
+
+    WINDOWS:
+        $ Java.exe hello.HelloWorld
+        //risultato Hello World!

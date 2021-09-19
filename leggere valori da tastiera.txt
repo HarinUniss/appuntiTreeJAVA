@@ -1,0 +1,7 @@
+Scanner scan = new Scanner(System.in);
+System.out.println("inserire un numero");
+int n = scan.nextInt();
+
+Scanner scan = new Scanner(System.in);
+System.out.println("inserire il nome di un mese");
+String mese = scan.next()

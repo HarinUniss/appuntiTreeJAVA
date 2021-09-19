@@ -1,0 +1,95 @@
+DICHIARARE UN ARRAY
+
+    Tipo[] nome;
+
+    oppure:
+
+    Tipo nome[];
+
+
+        int[] nomeTabella;	//dichiarazione
+
+        nomeTabella = new int[7]    //inizializzazione tabella di 7 elementi int
+
+        int[] nomeTabella = new int[7]; //dichiarazione + inizializzazine
+
+
+ALLOCARE L'ARRAY
+
+    nome = new Tipo[n];
+
+    Tutti gli elementi dell’array sono inizializzati con
+    il valore di default previsto dal tipo che abbiamo indicato.
+
+
+DEFINIRE TUTTI GLI ELEMENTI AL MOMENTO DELLA CREAZIONE DELL ARRAY
+
+        nomeTabella[] = new int[] {6,3,345,4,2134,23,1};
+
+
+ARRAY MULTIDIMENSIONALI
+    String[][] postiTeatro + new String[30][12];
+                                         ^  ^
+                                         |  |
+                                         |  Numero fila
+                                         Posti in una fila
+
+
+CONOSCELE LA LUNGHEZZA DI UN ARRAY
+        per non perdere il dato lo devo memorizzare in qualche variabile
+
+        int i = nome.length;
+
+
+INIZZIALIZZARE GLI ARRAY CON LISTE (LITERALS)
+
+        int [] numeroGiorniPerMese = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+
+ARRAY MULTIDIMENSIONALI
+
+        int [][][] arrayConDimensione3 = new int[4][5][6];
+
+    INIZZIALIZZAZIONE
+
+        float[][] matrice = new int[][] = {
+            { 1, 2, 3, 5},
+            { 4, 5, 6, 7},
+            { 7, 8, 9, 10, 11, 6}
+        };
+
+
+    POSSIBILITá DI CREARE ARRAY PARZIALMENTE INIZZIALIZZATI
+
+            int [][] array = new int[10][];    //creo un array di 10 righe
+
+            for(int i =0; i< 10; i++) {     //creo un ciclo for che specifica la  dimensione  della IESIMA RIGA
+                arrray[i] = new int[(i%3) +1];  //do una dimensione
+            }
+
+--------------------------------------------------------------------------------------------
+OPERAZIONI SUGLI ARRAY
+
+        -ACCEDERE a un valore dentro l'array
+            System.out.printlm( nomeTabella[4] )  //stampo il valore che si trova nella casella numero 4
+
+        -DEFINIRE un Nuovo valore all'intertno dell'array
+            nomeTabella[4] = 10;    //metto il valore 10all'interno della casella numero 4 della tabella
+
+
+
+METODI UTILI PER LAVORARE SUGLI ARRAY
+
+    li troviamo tutti nella classe;
+
+        java.util.Arrays
+
+	push(elemento) 		aggiunge un elemento in coda,
+	pop()			estrae un elemento dalla coda,
+	shift()			estrae un elemento dalla testa,
+	unshift(elemento) 	aggiunge un elemento in testa.
+	length  		fornisce dimensione dell'array
+
+
+
+

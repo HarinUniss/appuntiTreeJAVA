@@ -1,0 +1,138 @@
+OPERATORE CONDIZIONALE
+        permette di definire espressioni con due differenti risultati a seconda del valore assunto da una espressione booleana
+
+        Sintassi:
+            (condizione) ? rispostaSeVero : rispostaSeFalso;
+
+        Es:
+            int valoreAssoluto = (a<0) ? -a : a;
+
+            valoreAssoluto assumerà il valore -a se a è negativo oppure a se è positivo o nullo.
+
+--------------------------------------------------------------------------------------------
+CONDIZIONE IF ELSE
+
+    if(condizione1) {
+    	// ...
+    } else if (condizione2) {
+    	// ...
+    } else {
+    	//...
+    }
+
+----------------------------------------------------------------------------------------------------------
+ISTRUZIONE SWITCH
+
+    switch( condizione ){
+
+            case 0:{    // se la condizione ritorna 0
+                        // instructions
+            }break      //esci da switch
+
+            case 1:{    // se la condizione ritorna 1
+                        // instructions
+            }break      //esci da switch
+
+            case 2:{    // se la condizione ritorna 2
+                        // instructions
+            }break      //esci da switch
+
+            default:{   //se non eseguo nessuna delle altre condizioni
+                        // instructions
+            }
+
+        }
+
+    }
+
+
+
+IGNORARE QUALCHE ISTRUZIONE INTERNA A UN CICLO
+
+    continue;
+        se usata in mezzo a un ciclo le operazioni successive prima della fine del
+                        ciclo vengono saltate e si va direttamente al ciclo successivo.
+
+    break;
+        se usata in mezzo a un ciclo , si esce direttamente dal ciclo interrompendolo.
+
+
+
+---------------------------------------------------------------------------------------------
+
+CICLO FOR
+
+    Sintassi:
+            for (inizializzazione ; condizione ; incremento) {
+            // liste de déclarations
+            }
+
+    Es:
+            for (int i=0; i<5;i++) {
+                System.out.println("Clap your hands!");
+            }
+
+
+    OPERAZIONE CON GLI ARRAY
+
+            int[] myArray = new int[]{7,2,4};
+
+            for (int i=0; i<myArray.length; i++) {
+                System.out.println( myArray[i] );
+            }
+
+                /* myArray.length  dimensione dell'array ( numero di elementi ) */
+
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+FOR CON CICLI INFINITI
+
+    for(;;) {
+    	// ...
+    }
+
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+FOR EACH
+    eseguire un determinato blocco di codice per ogni elemento di una data collezione (o array)
+
+
+    for( Tipo elemento : collezioneElementi ) { //eseguo un ciclo per ogni elemento presente nella collezioneElementi (tabella)
+    	// operazioni
+    }
+
+
+
+--------------------------------------------------------------------------------------------------------------
+CICLO WHILE
+
+    Sintassi:
+           while ( Condizione ) {
+                // liste de déclarations
+           }
+
+    Es:
+           int numberOfTrees = 0;
+
+           while (numberOfTrees < 10) {
+               numberOfTrees += 1;
+               System.out.println("I planted " + numberOfTrees + " trees");
+           }
+           System.out.println("I have a forest!");
+
+
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+
+CICLO DO... WHILE
+
+    Sintassi:
+        do {
+            // instructions
+        } while( Condizione );
+
+    Es:
+        int pushUpGoal = 10;
+        do{
+            print ("Push up!");
+            pushUpGoal -= 1;
+        } while(pushUpGoal > 0);
+
+--------------------------------------------------------------------------------------------

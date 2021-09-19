@@ -1,0 +1,45 @@
+CREARE OGGETTI
+
+
+Prima lettera del nome deve essere maiuscola
+
+       Sintassi:
+        class Book {
+
+            // propriétés d'une classe
+            String titolo ;
+            String autore ;
+            int numeroDiPagine ;
+            String publisher = "OC" ;
+
+        }
+
+INSTANZIAZIONE o INIZIALIZZAZIONE DI UNA CLASSE = OGGETTO
+
+    Es creare un libro con i valori forniti alla creazione dell'oggetto:
+
+        Book myBook = new Book( "Proggrammare é arte" , "Becky James" , 425 );
+         ^      ^      ^    ^             ^                   ^          ^
+         |      |      |    |             |                   |          |
+         |      |      |    |             |                   |          |
+         |      |      |    |             Valori dei campi Argomento in ordine ( Titolo, Autore , Numeero di pagine)
+         |      |      |    |
+         |      |      |    Nome Della Classe
+         |      |      |
+         |      |      Parola chiave
+         |      |
+         |      Nome Variabile
+         |
+       Tipo
+ (Nome della classe)
+
+
+ COME ACCEDERE AI VALORI DEI CAMPI ARGOMENTO DELL'OGGETTO DI TIPO BOOK?
+
+    SI utilizza il punto (.)
+
+    Es:
+        myBook.titolo = "Coding is Art"     // do un titolo al libro
+        myBook.autore = "Becky James";      //scrivo il nome dell'autore
+        myBook.numeroDiPagine = myBook.numberOfPages + 10;  //aggiungo 10 pagine al libro
+

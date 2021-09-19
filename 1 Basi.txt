@@ -1,0 +1,176 @@
+COMMENTI 
+	// 		commento su singola riga
+
+	/* ... */	commento su piu righe
+
+	/** ... */	commento per la java documentation 
+		
+			esempio utilizzo commenti java doc
+			/**
+			*@name nome del metodo 
+			*@author chi ha scritto il programma.
+			*@param args tipi di argomenti
+			*@return breve descrizione di ciò che è tornato dal metodo. 
+			*@exception descrizione delle circostanze che determinano il lancio dell’eccezione. 
+			*/	
+
+LIVELLI DI CONTROLLO
+
+    private (membri)
+        Ne limita la visibilitá all'interno del codice della classe stessa
+
+    pubic (membri , classi , interfacce)
+        Visibili ovunque
+
+    default (amichevole)(membri, classi , interfacce)
+        Visibile solo all'interno del package
+
+    protected
+        visibile per il package e l'insieme delle sottoclassi;
+
+-----------------------------------------------------------------------------
+METODI
+	funzioni che possono esser eseguite nelle classi in cui son state scritte 
+	o richiamate da sotto classi della classe che contiene il metodo 
+
+		public void nomeMetodo(){
+			//quello che fa il metodo 
+		}
+
+	possono esistere metodi con lo stesso nome ma ricevono in ingresso argomenti differenti 
+
+-----------------------------------------------------------------------------
+
+PAKAGE 
+	cartelle contenenti il codice del programma 
+	per includere e richiamare delle classi che si trovano in un altro 
+	file dovrò includere il loro package
+
+	it.nomesocieta.nomeprogetto.controllo	//cartella contenente il main
+
+	it.nomesocieta.nomeprogetto.modello	//cartella contenente le classi del progetto
+
+	it.nomesocieta.nomeprogetto.utilita	//cartella contenente classi di utilità
+
+IMPORTARE CLASSI DA UN PACKAGE
+
+    import nome_package.NomeClasse;
+
+    quando non di vuole indicare tutte le singole classi di un package , ma vogliamo importarle tutte
+
+        import nome_package.*;
+
+
+------------------------------------------------------------------------------
+VARIABILI
+
+	//dichiarazione
+	int nomeVariabile;
+
+	//inizializzazione
+	nomeVariabile = 12;
+
+	//dichiarazione + inizializzazione
+	Strng nomeStringa = "qualcosa";
+
+COSTANTI 
+	static final int NUMERO_CARTE = 40;
+
+-----------------------------------------------------------------------------
+TIPI DI DATI PRIMITIVI
+			n bits	
+	boolean		1	true o false
+
+	byte 		8	positivo o negativo
+	short		16	positivo o negativo
+	int		32	positivo o negativo
+	long		64	positivo o negativo
+	float		32	positivo o negativo
+	double		64	positivo o negativo
+
+	char		16	senza segno, UNICODE 
+	
+-------------------------------------------------------------------------------
+DATI OGGETTO 
+	classi che definiscono un tipo di dato complesso 
+
+	String 		tavella di caratteri
+
+ CLASSI WRAPPER 
+	classi che definiscono un tipo primitivo 
+	e danno la possibilità di trattarli coni dei metodi 
+	perche sono a tutti gli effetti degli oggetti 
+
+	Byte
+	Short
+	Integer
+	Long
+	Float
+	Double
+	Character
+	Boolean	
+
+	
+-----------------------------------------------------------------------------
+CLASSE PRINCIPALE
+	clase che conterrà l'ordine delle operazioni del programma programma 
+
+	solitamente al suo interno richiamerà uun metodo/funzione esegui() 
+	che conterrà tutte le operazioni da svolgere
+
+
+
+ 
+	public class main {
+
+		//COSTRUTTORE 1
+		public static void Main (String args[]) {
+			//operazioni 
+		}
+
+		//COSTRUTTORE 2 altro costruttore che prende argomenti differenti
+		public static void Main () {
+			//operazioni 
+		}
+
+
+	} //fine main
+
+		// altri eventuali metodi (funzioni o sottoprogrammi)
+
+	} // fine classe
+
+
+----------------------------------------------------------------------------------
+
+CLASSE 
+
+	public class NomeClasse {
+
+		//dichiarazione o inizializzazione parametri della classe 
+		private int anni;
+		private String nome;
+		
+
+
+		//Costruttore 1
+		public static void NomeClasse (int anni , String nome) {
+			//operazioni 
+		}
+
+		//COSTRUTTORE 2 altro costruttore che prende argomenti differenti
+		public static void NomeClasse () {
+			//operazioni 
+		}
+
+
+	} //fine main
+
+		// altri eventuali metodi (funzioni o sottoprogrammi)
+
+	} // fine classe
+
+---------------------------------------------------------------------------------
+STAMPARE A SCHERMO 
+	System.out.println( elementi + " " + elemento );
+
