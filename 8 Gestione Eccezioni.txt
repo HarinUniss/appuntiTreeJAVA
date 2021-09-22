@@ -1,3 +1,170 @@
 GESTIONE ECCEZIONI
 
-	
+Quando capita un’ eccezione (e non viene gestita), il metodo attivo termina e lancia l’ eccezione verso il metodo 
+chiamante, che a sua volta termina e lancia l’eccezione verso il metodo chiamante.
+Quando l’eccezione raggiunge il main, l’esecuzione del programma termina stampando i dettagli dell’ errore 
+(stacktrace)
+
+Le eccezioni si possono dividere in due macro gruppi: 
+
+• Checked (prevedibili) 
+• Unchecked (non prevedibili)
+
+Java obbliga a gestire le eccezioni checked poichè il compilatore segna un errore. 
+Un esempio è la lettura di un file che potrebbe non esistere, in questo caso l’eccezione è la FileNotFound Exception
+
+File f = nwe File("pippo");
+
+//eccezione da gestire 
+Scanner in = new Scanner(f);
+
+
+
+e eccezioni unchecked possono non essere gestite, verrà generato eventualmente un errore in fase di esecuzione del 
+programma. Un esempio è l’eccezione ArithmeticException quando si effettua una divisione per 0
+
+int a=5 ;
+int b=0;
+int c=a/b;	//dará errore
+
+
+
+GESTIONE ECCEZIONI CON try-catch
+
+• Il blocco try include codice che può generare un’eccezione
+• Il blocco catch contiene il codice che gestisce l’eventuale eccezione
+
+
+try {
+	//istruzioni che possono generare eccezioni
+
+} catch (<nomeEccezione> exe){
+
+	//istruzioni per gestire l’eccezione exe
+
+}
+
+
+Tre possibili scenari:
+• Se durante l’esecuzione del blocco del try non si verificano eccezioni, il codice scritto dentro al catch viene 
+ignorato e il metodo continua con le istruzioni successive; 
+
+• Se si verifica l’eccezione FileNotFoundException le istruzioni dentro al blocco try vengono interrotte nel punto 
+in cui è stata generata l’eccezione e viene eseguito il codice dentro al blocco catch. Il metodo continua ; 
+
+• Se si verifica un’ eccezione diversa da FileNotFoundException, le istruzioni dentro al blocco try vengono interrotte , 
+il catch NON viene eseguito , il metodo rilancia l'eccezione trovata al metodo chiamante 
+
+---------------------------------------------------------------------------------------------------------------------------
+
+GESTIONE ECCEZIONI try-multi-catch
+
+try {
+	//istruzioni che possono generare varie eccezioni>
+} catch (<eccezione1> e1){
+	//istruzioni per gestire l’eccezione e1
+} catch (<eccezione2> e2){
+	//istruzioni per gestire l’eccezione e2
+}
+
+Il codice scritto dentro al blocco del try potrebbe generare più di una eccezione. 
+• Per gestire le varie eccezioni si dovrebbero scrivere più blocchi catch, uno per ogni tipo di Eccezione
+• Alternativamente, ma non è la scelta da preferire, si può realizzare un solo catch che gestisce l’eccezione 
+Exception , questo intercetterà tutti i tipi di eccezione
+
+----------------------------------------------------------------------------------------------------------------------------
+
+GESTIONE ECCEZIONI try-catch-finally
+
+try {
+	//istruzioni che possono generare eccezioni
+} catch (<eccezione> e){
+	//istruzioni per gestire l’eccezione e
+} finally {
+	//istruzioni
+}
+
+
+a clausola finally è opzionale. 
+
+Permette di definire codice che viene eseguito sempre e comunque all’uscita del 
+blocco try catch, indipendentemente dal fatto che c’è stata un’eccezione o meno.
+ 
+Il blocco finally deve essere sempre posizionato per ultimo dopo i blocchi di catch.
+In genere è utilizzato per rilasciare risorse, ad esempio file o connessioni.
+
+--------------------------------------------------------------------------------------------------
+
+GESTIONE ECCEZIONI try-catch annidati
+
+Il codice presente dentro i blocchi catch o finally può generare a sua volta ulteri eccezioni che devono essere gestite
+
+
+try {
+	//istruzioni che possono generare eccezioni
+} catch (<eccezione> e){
+	//istruzioni per gestire l’eccezione e
+} finally {
+	try {
+		//istruzioni che possono generare eccezioni
+	} catch (<eccezione> e){
+		//istruzioni per gestire l’eccezione e
+	}
+}
+
+----------------------------------------------------------------------------------------------------
+
+GESTIONE ECCEZIONI throws
+
+Le eccezioni checked ,come abbiamo detto, devono essere gestite e si può fare in due modi:
+
+1. Catturate con try-catch
+2. Propagate al metodo chiamante con throws
+	IN QUESTO SECONDO CASO SARÁ IL METODO CHIAMANTE CHE DOVRÁ GESTIRE L'ECCEZIONE CON IL try-catch
+
+Per propagare le eccezioni al metodo chiamante si usa il comando throws <eccezione> nella firma del metodo
+
+es:
+public static String  convertiGiorno( int n) throws GiornoNonValidoException  {
+		
+		switch( n ) {
+		
+		case (1): return "Lunedi" ;
+		case (2): return "Martedi" ;
+		case (3): return "Mercoledi" ;
+		case (4): return "Giovedi" ;
+		case (5): return "Venerdi" ;
+		case (6): return "Sabato" ;
+		case (7): return "Domenica" ;
+		default : throw new GiornoNonValidoException();
+		
+		}
+
+
+IN QUESTO ESEMPIO É ANCHE STATO CREATO UN FILE CLASSE GiornoNonValidoException CHE É UN ESTENSIONE DI Exception
+
+public class GiornoNonValidoException extends Exception {
+
+}
+
+
+-----------------------------------------------------------------------------------------------------------------
+Gestione delle eccezioni creazione
+
+In java esistono già vari tipi di eccezioni rappresentate da altrettanti classi: NullPointerException, IOException ,…
+Però a volte è necessario creare nuovi tipi di eccezioni specifiche per il proprio programma, per farlo bisogna creare 
+classi che estendono le classi Exception o RuntimeException
+
+• Se si estende la classe Exception si crea una eccezione checked; 
+• Se si estende la classe RuntimeException si crea una eccezione unchecked; 
+
+public class GiornoNonValidoException extends Exception {
+
+}
+
+OPPURE
+
+public class GiornoNonValidoException extends RuntimeException {
+
+}
+
