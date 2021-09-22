@@ -1,0 +1,223 @@
+• List: collezione di elementi organizzati in sequenza (lista) 
+• Set: collezione di elementi univoci (insieme) 
+• Map: collezione di elementi con una chiave di accesso (mappa)
+
+
+Lista definizione
+
+Una lista è una collezioni di elementi concettualmente in sequenza: 
+• Mantiene l’ordine di inserimento degli elementi. 
+• La dimensione della lista non è fissa e può variare dinamicamente all’occorrenza. 
+• Può contenere oggetti duplicati
+
+Ogni nodo della lista è composto da due parti: 
+• un valore
+• un riferimento al nodo successivo
+
+
+Le implementazioni più utilizzate sono: 
+
+• ArrayList: 
+	è una lista basata sugli array, ma che permette di avere dimensione variabile 
+	aumentando e diminuendo automaticamente la capacità.
+
+	performante nella manipolazione 
+
+• LinkedList: 
+	è una lista in cui ogni nodo è doppiamente collegato sia al precedente che al successivo. 
+	
+	performante nell'aggiunta e rimozione di elementi
+
+
+LIBRERIE DA IMPORTARE
+		import java.util.ArrayList;
+		import java.util.LinkedList;
+
+DICHIARAZIONE
+		ArrayList<Integer> myList1 = new ArrayList<>();
+		LinkedList<Integer> myList2 = new LinkedList<>();
+
+
+lista.add(element); 		Aggiunge alla lista un elemento in ultima posizione
+lista.add(index, element); 	Aggiunge alla lista un elemento nella posizione specificata (indice)
+lista.addAll(lista2); 		Aggiunge tutti gli elementi della lista2 nella lista
+lista.get(index); 		Recupera l’element della posizione specificata
+lista.set(index,value); 	Sostituisce l’element nella posizione specificata con il valore passato
+lista.indexOf(element); 	Recupera la posizione dell’element
+lista.size(); 			Indica la dimensione della lista (numero di elementi)
+lista.isEmpty(); 		Indica se la lista è vuota o piena
+lista.clear(); 			Svuota la lista
+lista.remove(index); 		Rimuove l’element che si trova in una determinata posizione
+lista.forEach(..) 		Permette di iterare gli elementi della lista
+lista.toArray(); 		Trasforma la lista in un array
+
+
+
+
+ITERAZIONE LISTE
+	
+	for ( int i = 0 ; i < lista.size(); i++){
+	     System.out.println( lista.get(i) );
+	}
+
+
+	for ( Integer valore : lista ){
+	     System.out.println(valore);
+	}
+
+
+	lista.forEach( valore ->{
+	     System.out.println(valore);	
+	});
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+set in java è un insieme di elementi 
+• Nel set non viene mantenuto l’ordine degli elementi. 
+• Nel set non sono consentiti i duplicati, i duplicati vengono scartati
+
+Sono utilizzati solo nei casi particolari in cui si vuole essere sicuri di non avere duplicati e l’ordine 
+degli elementi non è importante, in tutti gli altri casi si usano le liste
+
+
+
+Il Set in java è un concetto generico (interfaccia)
+che viene realizzato in differenti modi specializzati 
+(implementazioni)
+
+
+L’ implementazioni più utilizzata è: 
+• HashSet: crea insiemi tramite tabella hash
+
+		Set<Integer> set = new HashSet<Integer>();
+		
+		//oppure
+
+		HashSet<Integer> set = new HashSet<Integer>();
+
+
+
+I metodi del Set sono simili a quelli della Lista, ma ovviamente non sono presenti quei metodi che 
+riguardano la posizione degli elementi.
+Qui un elenco dei principali comandi
+	
+Comando Descrizione
+
+set.add(element); 	Aggiunge al set un elemento
+set.addAll(set2) 	Aggiunge tutti gli elementi del set2 nel set
+set.contains(element); 	Restituisce true se l’element è presente
+set.size(); 		Indica la dimensione del set(numero di elementi)
+set.isEmpty(); 		Indica se il set è vuoto
+set.clear(); 		Svuota il set
+set.remove(element); 	Rimuove l’element dal set
+set.forEach(..) 	Permette di iterare gli elementi del set
+set.toArray(); 		Trasforma il set in un array
+
+
+
+
+
+ITTERARE ELEMENTI DI UN SET PIU USATI
+
+for (Integer each :  lista){
+	System.out.println(each );
+}
+
+
+lista.forEach( each ->{
+	System.out.println(each);
+});
+
+
+--------------------------------------------------------------------------------
+
+map in java è una mappa associativa: 
+gli elementi sono associati ad una chiave.
+
+La mappa concettualmente può essere rappresentata da una tabella con 2 colonne in cui ogni 
+elemento (entry) è composto dalla coppia chiave (key) e valore (value)
+
+		KEY		VALUE
+		chiave1		24
+		chiave2		50
+		chiave3		24
+
+Le chiavi di una mappa sono uniche, non possono esistere chiavi duplicate. 
+Se si aggiunge una nuova entry con una chiave che esiste già, la nuova entry sostituisce la 
+precedente.
+
+
+Map in java è un concetto generico (interfaccia) che viene realizzato in differenti modi 
+specializzati (implementazioni). Ogni tipo di implementazione ha piccole differenze implementative, 
+ma non di utilizzo nella pratica.
+
+
+Le implementazioni più utilizzate sono: 
+
+• HashMap: elementi sono ordinati per chiave
+
+	Map<Integer, Character> listaHashMap = new HashMap<Integer, Character>();
+
+
+• LinkedHashMap: elementi sono ordinati per ordine di inserimento
+
+	Map<Integer, Character> listaLinkataHashMap = new LinkedHashMap<Integer, Character>();
+	
+
+L’ elenco dei comandi più utilizzati
+
+map.get(key) 		Restituisce l’entry con chiave “key”
+map.put(key,value); 	Aggiunge una entry alla mappa con “key” e “value”. Se la chiave esiste già l’entry viene
+sostituita
+map.addAll(map2) 	Aggiunge tutte le entry della map2 alla map
+map.remove(key); 	Rimuove l’entry con chiave “key”
+map.size(); 		Indica la dimensione della mappa
+map.isEmpty(); 		Indica se la mappa è vuota
+map.clear(); 		Svuota la mappa
+map.containsKey(key); 	Indica se la mappa contiene la chiave “key”
+map.forEach(..) 	Permette di iterare gli elementi dela mappa
+map.keySet(); 		Restituisce l’array delle chiavi della mappa
+
+
+Map iterare gli elementi
+
+	Entry rappresenta una coppia chiave-valore contenuta in una mappa
+	entrySet() di java.util.Map restituisce una collezione iterabile di tutti gli oggetti contenuti nella mappa
+
+	for ( Map.Entry<Integer, Character> entry: listaHashMap.entrySet() ) {
+			 System.out.println("Key = "+ entry.getKey() +", Value = "+ entry.getValue());
+		}
+
+
+	for ( Map.Entry<Integer, Character> each: listaHashMap.entrySet() ) {
+			 System.out.println("Key = "+ each.getKey() +", Value = "+ each.getValue());
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
