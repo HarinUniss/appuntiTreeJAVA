@@ -1,4 +1,4 @@
-• List: collezione di elementi organizzati in sequenza (lista) 
+• List: collezione di elementi organizzati in sequenza (lista)  
 • Set: collezione di elementi univoci (insieme) 
 • Map: collezione di elementi con una chiave di accesso (mappa)
 

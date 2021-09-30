@@ -1,4 +1,4 @@
-Lo Stream in java rappresenta una sequenza di elementi su cui eseguire operazioni.
+Lo Stream in java rappresenta una sequenza di elementi su cui eseguire operazioni. 
 
 Permettono di avere un modo alternativo di iterare e manipolare le collection rispetto alle classiche
 versioni con ciclo for o while. 
