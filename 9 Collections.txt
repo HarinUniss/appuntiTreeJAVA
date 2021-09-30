@@ -196,7 +196,13 @@ Map iterare gli elementi
 
 
 
+----------------------------------------------------------------------------------------
+COLLEZIONI DI COLLEZIONI
 
+Come per gli array di array (bidimensionali), possono esistere collezioni di collezioni: • Liste di Liste List<List<String>> listadiLista
+• Mappa di Liste Map<String, List<String>> mappadiListe
+• Lista di Mappe List<Map<String,String>> listadiMappe
+• Lista di Liste di Liste di Mappe
 
 
 
