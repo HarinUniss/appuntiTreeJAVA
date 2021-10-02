@@ -1,0 +1,170 @@
+Lo Stream in java rappresenta una sequenza di elementi su cui eseguire operazioni. 
+
+Permettono di avere un modo alternativo di iterare e manipolare le collection rispetto alle classiche
+versioni con ciclo for o while. 
+
+Semplificano notevolmente molte operazioni che, in alternativa, dovrebbero essere implementate con 
+righe e righe di codice.
+
+Esistono vari modi per creare uno stream, un esempio è attraverso il metodo of della classe Stream
+Stream.of("val1", "val2", "val3"...)
+Stream.of(collection)
+
+Ma di solito gli stream vengono creati a partire da una collection. 
+• Da array : Arrays.stream(array)
+• Da liste: lista.stream()
+• Da set: set.stream()
+
+
+I metodi messi a disposizione dagli stream indicano cosa vogliamo che l’elaboratore faccia, non come.
+
+Spesso, per effettuare modifiche ad una collection, è conveniente trasformare la collection in uno 
+stream, modificare lo stream e ritrasformarlo in lista, proprio grazie alla semplicità di utilizzo dei vari 
+metodi ed alla sintassi compatta.
+
+
+Esistono due tipi di operazioni che si possono effettuare sugli stream: 
+
+• Intermedie: operazioni intermedie che come output danno un altro stream
+• Terminali: operazioni finali che danno come output un dato finale
+
+------------------------------------------------------------------------------------------------------------------
+OPERAZIONI INTERMEDIE 
+
+Le operazioni intermedie molto comuni degli stream sono: 
+
+• Filter: permette di filtrare gli elementi della collection attraverso una condizione booleana
+	lista.stream().filter( value -> value > 5 );
+
+• Distinct: permette di rimuovere i duplicati 
+	lista.stream().distinct();
+
+• Sorted: permette di ordinare gli elementi della lista
+	lista.stream().sorted( Comparator.reverseOrder() );
+
+• Map: modifica tutti gli elementi della lista
+	lista.stream().map( value -> value.toUpperCase() );
+
+Le operazioni intermedie si possono concatenare per applicare più trasformazioni ad uno stream
+
+
+Operazioni intermedie più usate
+Istruzione 			Descrizione 	-->>Output stream
+stream.filter(condizione) 	Filtra gli elementi della collection attraverso una condizione booleana
+stream.distinct() 		Rimuove gli elementi duplicati 
+stream.limit(int) 		Limita il numero di elementi dello stream 
+steam.sorted(…) 		Effettua un ordinamento degli elementi dello stream 
+stream.map(…) 			Effettua trasformazioni a tutti gli elementi dello stream 
+stream.flatMap() 		Trasforma collection annidate in collection flat 
+
+
+---------------------------------------------------------------------------------------------------------------------------
+OPERAZIONI TERMINALI
+
+
+Le operazioni terminali molto comuni degli stream sono: 
+• allMatch, anyMatch, noneMatch: verifica se tutti, alcuni o nessun elemento dello stream soddisfa 
+	una condizione booleana, il risultato di queste operazioni è un booleano
+	boolean anyMatch = lista.stream().anyMatch( value -> value.startWith("c") );
+
+• findFirst, findAny : restituisce il primo o un elemento casuale che soddisfa una condizione booleana, 
+	il risultato è un oggetto Optional 
+
+	Optional<String> findAny = lista.stream().filter( value -> value.strartsWith("g") ).findAny();
+
+• reduce: effettua operazioni aggregando tutti gli elementi dello stream (fa la somma di tutto)
+	Optional<Integer> sum = numbers.stream().reduce( (x,y) -> x + y );
+
+• collect: trasforma uno stream in una collection
+	numbers.stream().collect(Collectors.toList());
+
+
+
+Operazioni terminali più usate
+Istruzione 				Descrizione 								     --> Output  
+
+stream.anyMatch(condizione) 		Restituisce true se almeno un elemento dello stream soddisfa la condizione   --> boolean
+
+stream.allMatch(condizione) 		Restituisce true se tutti gli elementi dello stream soddisfano la condizione --> boolean
+
+stream.noneMatch(condizione) 		Restituisce true nessuno degli elementi dello stream soddisfa la condizione  --> boolean
+
+
+steram.findAny(); 			Restituisce un element qualsiasi dello stream, spesso usatoinsieme a filter  --> Optional
+
+stream.findFirst(); 			Restituisce il primo element dello stream, spesso usato insieme a filter     --> Optional
+
+stream.reduce(istruzione) 		Effettua operazioni su aggregando tutti gli elementi dello stream
+
+stream.collect(…) 			Trasforma uno stream in collection (es. Lista o Map) 			     --> Collectio
+
+stream.count()		ritorna la dimensione dello stream
+
+
+
+QUANDO IL COMPILATORE NON PERMETTE DI CASTARE UNA LIST IN ARRAYY O VICEVERSA USARE LA SEGUENTE SCRITTURA
+
+DA LISTA AD ARRAY 
+.collect( Collectors.toCollection( ArrayList<Integer> :: new ));
+
+DA ARRAY A LISTA
+.collect( Collectors.toCollection( LinkedList<Integer> :: new ));
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+ESEMPI UTILI
+
+
+		LinkedList<Integer> numeri = new LinkedList<Integer>();
+		numeri.add(1);
+		numeri.add(2);
+		numeri.add(3);
+		
+		Optional<Integer> sum = numeri.stream().reduce( (x,y) -> x + y );
+		 int a = sum.get() ;
+		System.out.println(a +" "+ sum.get());
+		
+		
+		
+		LinkedList<Integer> listalinkata = new LinkedList<Integer>();
+		
+		listalinkata.addAll(numeri.stream().collect(Collectors.toList())) ;
+		
+		
+		ArrayList<Integer> listaArray = new ArrayList<Integer>();
+		
+
+//notare che posso castare un flusso di una collectionsin un altro tipo 
+		listaArray = (ArrayList<Integer>) numeri.stream().collect(Collectors.toList());
+		
+
+
+
+
+
+
+
+MI ALLONTANO PER QUALCHE MINUTO!!!!!
+ il tempo che hai per fare gli esercizi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

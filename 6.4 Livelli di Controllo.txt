@@ -1,0 +1,88 @@
+ACCEDERE A UNA VARIABILE
+    PORTATA (scope)
+        Sono accessibili unicamente nel BLOCCO "{}"di codice dove sono state dichiarate
+
+    LIVELLO DI ACCESSO AD UNA VARIABILE
+        Parole chiave che limitano o migliorano l'accessibilitá a delle variabili
+
+        VARIABILE LOCALE
+            variabile disponibile solo all'interno del blocco in cui e stata dichiarata
+
+        VARIABILE GLOBALE
+            variabile disponibile per tutte le Classi e metodi di un programma principale
+
+-----------------------------------------------------------------------------------------------
+LIVELLI DI CONTROLLO ACCESSO
+     Parole chiave che limitano o migliorano l'accessibilitá a delle variabili
+
+     -static : contiene informazioni comuni a tutta la classe (possono essere sia privati che pubblici);
+
+     -public : visibile da tutti e per questo meno restittiva;
+
+     -protected (protetto) : visibile per il package e l'insieme delle sottoclassi;
+
+     -package-protected (visibile da package) : generalmente visibile solo dal package dove si trova (prarametro di defaut se non specificato, PIU RESTRITTIVO DEI DUE PRECEDENTI);
+
+     -private (privato) : accessibile unicamente nel contesto in cui le variabili sono state definite (all'interno della classe in cui sono state posizionate).
+
+     ES:
+         /* Definisco una classe unicorno: */
+             class Unicorn {
+
+                 // proprietá di Unicorn (Variabili o Costanti)
+                    private int height = 170;
+                    public String power = "Double.infinity";
+
+                 // metodi (funzioni)
+                    private static void sleep() {
+                    }
+                    public static void run() {
+                    }
+
+             }
+
+         /* genero un oggetto della classe Unicorn e cerco di utilizzare alcuni suoi metodi o variabili */
+
+            Unicorn unicorn = new Unicorn();    //creazione dell'oggetto unicorn
+
+            System.out.println(unicorn.power); // Ok
+
+            unicorn.height = 180; // Erreur
+
+            unicorn.sleep(); // Erreur
+
+            unicorn.run(); // Ok
+
+I LIVELLI DI CONTROLLO POSSONO ESSERE APPLICATI ANCHE ALLE CLASSI!!!
+
+           ES:
+            public class PublicClass {
+            }
+
+            private class PrivateClass {
+            }
+
+GERARCHIA DI CONTROLLO
+    Un elemento puó avere lo stesso livello o dei livelli PIU RESTRITTIVI dell'elemento nel quale é contenuto
+
+    ES:
+        public class PublicClass {
+            public boolean publicProperty = true;
+            int internalProperty = 0; //par défaut pour package-private
+            private String fileprivateProperty = "Hello!"
+            private static void privateMethod() {
+            }
+        }
+
+    SE! dichiaro una classe come privata (private)
+        gli elementi interni non potranno essere che package-private o private
+
+    SE LA CLASSE  PrivateClass é stata definita come privata
+
+             private PrivateClass{}
+
+       per poter creare un oggetto di quella classe saró costretto a crearlo privato (private)
+
+               PrivateClass a = new PrivateClass(); // Erreur
+               private PrivateClass b = new PrivateClass(); // Ok
+               private PrivateClass c = new PrivateClass(); // Ok

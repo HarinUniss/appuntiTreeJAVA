@@ -1,0 +1,25 @@
+PACKAGE
+
+    Cartella contenente delle classi e altre sottocartelle
+
+
+    Sintassi
+        package nome_package;
+
+        deve essere una delle prime istruziioni nell'unitá di compilazione (come l'inclusione delle librerie nel C)
+
+
+IMPORTARE CLASSI DA UN PACKAGE
+
+    import nome_package.NomeClasse;
+
+    quando non di vuole indicare tutte le singole classi di un package , ma vogliamo importarle tutte
+
+        import nome_package.*;
+
+
+
+
+
+
+

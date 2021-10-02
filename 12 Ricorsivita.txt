@@ -1,0 +1,85 @@
+RICORSIVITA
+    possibilitá di chiamare un metodo direttamente dentro sestesso
+
+PER EVITARE LOOP INFINITI
+    è necessario creare un'istruzione condizionale che terminerà la ricorsione
+                                        una volta raggunto l'obbiettivo prefissato.
+
+    class RicorsivitaInJava{
+
+        /*Creo un metodo che fá il fattoriale*/
+
+        public static int fattoriale( int n ){
+            if(n <= 1){
+                return 1;   //non richiamo la funzione fattoriale  se n <= 1
+            }else{
+                return n * fattoriale(n-1);     //se n > 1 chiamo internamente il metodo fattoriale per n-1 finché n non sará =1
+            }
+        }
+
+    }
+
+CONTRE I LIBRI IN OGNI CATEGORIA CONTENENTE DELLE SOTTOCATEGORIE
+
+     contare i libri in ogni categoria, ogni sottocategoria e così via, è necessario
+                        assicurarsi di prendere in considerazione tutti i diversi layer.
+     Quindi, una volta completata, questa funzione verrà chiamata se stessa,
+                ma questa volta facendola funzionare con la sottocategoria di una delle categorie originali.
+         Questa iterazione andrebbe oltre e sarebbe chiamato di nuovo per affrontare la sottocategoria.
+         E così via, fino a quando non ci sono più sottocategorie.
+         In questo modo, si può andare all'ultimo sotto-livello di ogni categoria originale.
+         E se una categoria non ha sottocategoria, la funzione tornerà al punto di partenza.
+
+Class BookStore {
+
+public static Categories categories;
+
+// Définissez une fonction récursive
+public static int countBooks(Categories categories) {
+        int c = 0;
+        for (Category category : categories) {
+            c += category.numberOfBooks;
+            c += countBooks(category.subCategories);
+            }
+        return c
+}
+
+
+	public static void main(String[] args) {
+	// Appelez cette fonction récursive
+		Category c1 = new Category();
+		c1.numberOfBooks = 3;	//metto 3 libli nella categoria 1 
+		Category c2 = new Category();
+		c2.numberOfBooks = 2;	//metto 2 libli nella categoria 2 
+		Category c3 = new Category();
+		c3.numberOfBooks = 10;	//metto 10 libli nella categoria 3 
+		Categories subc1 = new Categories();
+		subc1.add(c3);	//creo la sub categoria 1 che conterrá la categoria 3 
+		c1.subCategories = subc1;	//metto la sub categoria 1 nella categoria 1
+
+		categories = new Categories();
+		categories.add(c1);
+		categories.add(c2);
+
+		int numberOfBooks = countBooks(BookStore.categories);
+		System.out.println("The bookstore has " + numberOfBooks + " books");
+	}
+
+
+}
+---------------
+import java.util.ArrayList;
+
+class Categories extends ArrayList<Category> {
+
+}
+
+---------------
+public class Category {
+
+	public int numberOfBooks;
+
+	public Categories subCategories = new Categories();
+
+}
+

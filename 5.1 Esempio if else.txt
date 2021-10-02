@@ -1,0 +1,27 @@
+ESEMPIO if-else
+
+        /* CONDIZIONE DEL CIAO!!! */
+
+
+            /*Analizzo un argomento della funzione Main  e in base a tale argomento do un risultato*/
+
+            package condizione;     //specifico la cartella dove si trova il codice
+
+            public class CondizioneDelCiao{                     //nome classe
+
+                public static void main( String[] args ) {      // funzione Main che riceve come argomento una stringa di nome args
+                                                                // che conterrá il nome della persona che volgio salutare
+                    if (args.length == 1){          //verifico se é stato passato un argomento nella funzione
+
+                        diCiao( args[]);
+                    }else {                                     //se non ho messo nessun argomento nel main, vuol dire che non conosco il nome, ma saluto comunque
+                        diCiao( "tizio che non so chi sei");
+                    }
+                }
+
+                private static void diCiao( String[] X ){       //Creo la funzione diCiao()
+
+                    System.out.println("Ciao " + X + "!");  //stampo "Ciao X"
+
+                }
+            }

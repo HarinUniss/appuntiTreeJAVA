@@ -1,0 +1,101 @@
+Operatori e Casting
+
+operatore “punto”
+     serve per l’accesso a campi e metodi di classi e oggetti.
+
+          Per accedere al campo simpleField dell’oggetto myObject scriviamo semplicemente:
+
+                myObject.simpleField
+
+
+
+          Se myObject espone anche un metodo myMethod(int value), possiamo involarlo scrivendo:
+
+                myObject.myMethod(100)
+
+
+CASTING
+    casting consiste nel forzare un valore di un tipo ad assumere un tipo diverso
+
+    scriviamo 5 ad esempio abbiamo un numero intero, ma se ne facciamo un cast a float
+    inTenderemo la versione di 5 “reale”, per farlo basta scrivere:
+
+        (float) 5;
+
+    Es:
+        double v1;
+        int v3 = 5;
+        //voglio mettereil valore di v3 in v1, allora devo fare un casting
+        v1 = (double) v3;
+
+
+OPERATORI ABBREVIATI
+
+    Vale lo stesso per ogni operatore binario (es. -, *, /)
+        a = a+5;  oppure    a += 5;
+
+
+    X++; // valuta X, poi incrementa X di 1
+    X--; // valuta X, poi decrementa X di 1
+    ++X; // incrementa X di 1, poi valuta X
+    --X; // decrementa X di 1, poi valuta X
+
+
+
+OPERATORI JAVA SU STRINGHE
+
+
+OPERATORE DI CONCATENAMENTO +
+
+       String a = "Pietro " ;
+       String b = a + "Castellu";
+       String b += "cci"
+
+       Il risultato sarà "Pietro Castellucci"
+
+
+
+OPERATORI BITWISE
+     Operatore	Descrizione	                        espressione	    Cosa restituisce
+     &	        and ‘bit a bit’	                        x&y	        and tra i bit di x e y
+     |	        or ‘bit a bit’	                        x|y	        or tra i bit di x e y
+     ^	        xor (o or esclusivo) ‘bit a bit’	    x^y	        xor tra i bit di x e y (lo xor ritorna true (o il bit 1) solo se uno degli operandi è vero e l’altro è falso)
+     >>  <<	    shift destro (o sinistro) con segno	    x>>y	    sposta i bit della variabile x verso destra (o sinistra) di y posizioni, preservando il bit di segno. Con lo slittamento a DESTRA le cose cambiano perché coinvolge l’ultimo bit che è speciale, in quanto rappresenta il segno
+     >>>	    shift destro senza segno	            x>>>y	    sposta i bit della variabile x verso destra di y posizioni, senza considerare il bit di segno (vengono aggiunti sempre 0 a sinistra)
+     ~	        complemento	                            ~x	        inverte tutti i bit della variabile x (gli 0 diventano 1 e viceversa)
+
+
+
+OPERATORE CONDIZIONALE
+        permette di definire espressioni con due differenti risultati a seconda del valore assunto da una espressione booleana
+
+        Sintassi:
+            (espressione boolana) ? expVero : expFalso;
+
+        Es:
+            int valoreAssoluto = (a<0) ? -a : a;
+
+            valoreAssoluto assumerà il valore -a se a è negativo oppure a se è positivo o nullo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

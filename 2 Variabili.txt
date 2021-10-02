@@ -146,19 +146,43 @@ OGGETTO
 	Object oggetto;  //dichiarazione
 ------------------------------------------------------------------------
 
-CLASSI WRAPPER 
-	classi che definiscono un tipo primitivo 
-	e danno la possibilità di trattarli coni dei metodi 
-	perche sono a tutti gli effetti degli oggetti 
+CLASSI WREPPER
 
-	Byte
-	Short
-	Integer
-	Long
-	Float
-	Double
-	Character
-	Boolean	
+        Tipo primitivo	Classe Wrapper
+        byte	        Byte
+        short	        Short
+        int	            Integer
+        long	        Long
+        float	        Float
+        double	        Double
+        char	        Character
+        boolean	        Boolean
+
+
+   qualificate come final  perciò NON è possibile derivare da loro
+
+
+        int val = 44;
+        //dato un tipo primitivo si crea la classe wrapper
+        Integer valore = new Integer(val);      //creo l'ogetto valore di tipo Integer contenente il valore int val
+        //dalla classe wrapper è possibile "estrarre" il valore
+        int valoreEstratto = valore.intValue();     // leggo il valore dell'oggetto valore tramite il metodo interno alla classe intValue() e lo salvo nella variabile int
+
+
+
+AUTOBOXING
+
+    Ci permette di inscatolare un tipo primitivo nel relativo tipo wrapper in modo automatico
+
+        Integer x = 10;
+        Double y = 5.5f;
+        Boolean z = true;
+        Number n = 0.0f;
+
+        gli oggetti scritti nello spezzone di codice vengono automaticamente creati con i valori di riferimento dettati, senza generare errori
+
+
+
 
  
 
@@ -252,3 +276,5 @@ CARATTERI UNICODE ED ESSCAPE
         \’	    apice singolo
         \”	    doppio apice
         \\	    backslash (\)
+
+

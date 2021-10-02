@@ -1,0 +1,116 @@
+SUPERCLASSE , CLASSE MADRE , CLASSE BASE
+
+EREDITA DELLE SOTTOCLASSI  permette di creare delle CLASSI FIGLIE (Sotto Classi) dalle CLASSI MADRE (Superclassi)
+                                                        che ereditano i METODI  della Classe madre.
+
+    si puó inoltre specializzare le Sottoclassi agiungendoli dei metodi in piú
+                    (Questi metodi saranno utilizzabili solo dalla Sottoclasse specifica).
+
+
+DEFINISCO LA SUPERCLASSE FiguraGeometrica
+
+    public class FiguraGeometrica{
+        private int x;
+        private int y;
+        pubblic void spostaDi( int nuovoX , int nuovoY ){
+            this.x = nuovoX;    //mi riferisco alla x di questa classe FiguraGeometrica
+            this.y = nuovoY;    //idem per y
+        }
+
+    }
+
+DEFINISCO LA SOTTOCLASSE  Quadrato
+
+    public class Quadrato extends FiguraGeometrica{
+
+        private long lato ;     //aggiungo un nuovo attributo/parametro
+        public long assegnaLato(){      //aggiungo un metodo unicamente per la classe Quadrato
+            return lato ;
+        }
+        public long assegnaperimetro(){ //aggiungo un metodo unicamente per la classe Quadrato
+            return 4*lato ;
+        }
+
+    }
+
+// quadrato apparterrá sia all aclasse FiguraGeometrica
+
+--------------------------------------------------------------------------------------
+POLIMORFISMO
+    permette di utilizzare lo stesso metodo della SUPERCLASSE ma con delle sfacettature
+        differenti in base all'oggetto della sottoclasse alla quale applichiamo il metodo.
+
+    es:
+       /* CREO LA SUPERCLASSE Animale */
+
+       clas Animale {
+            void spostare {     //personalizzo l'effetto del metodo spostare() su questo tipo di oggetto
+                System.out.println("Mi sposto!!!") ;
+            }
+       }
+
+       /* CREO UNA SOTTOCLASSE Cane */
+
+        clas Cane extends Animal {
+            void spostare {      //personalizzo l'effetto del metodo spostare() su questo tipo di oggetto
+                System.out.println("Zampetto!!!");
+            }
+        }
+
+        /* CREO UNA SOTTOCLASSE Cavallo */
+        clas Cavallo extends Animal {
+            void spostare {     //personalizzo l'effetto del metodo spostare() su questo tipo di oggetto
+                System.out.println("Galoppo!!!");
+            }
+        }
+
+        /* CREO UNA SOTTOCLASSE Pesce */
+
+        clas Pesce extends Animal {
+            void spostare {     //personalizzo l'effetto del metodo spostare() su questo tipo di oggetto
+                System.out.println("Nuoto!!!");
+            }
+        }
+
+
+        /* CREO UNA SOTTOCLASSE Piccione */
+
+        clas Piccione extends Animal {
+            void spostare {     //personalizzo l'effetto del metodo spostare() su questo tipo di oggetto
+                System.out.println("Volo!!!");
+            }
+        }
+
+    //Possiamo dunque chiamare il Metodo spostare() su tutti gli oggetti di queste classi
+            OTTENENDO DEI RISULTATI LEGGERMENTE DIFFERENTI E PERSONALIZZATI.
+
+
+    Es;
+          public class Test {
+              public static void main(String[] args) {
+
+                  Animale a1 = new Animale();   //creo un oggetto di tipo Animale
+
+                  Animale a2 = new Cane();      //creo un oggetto di tipo Cane
+
+                  Animale a3 = new Cavallo();   //creo un oggetto di tipo Cavallo
+
+                  Animale a4 = new Pesce();     //creo un oggetto di tip Pesce
+
+                  Animale a5 = new Piccione();  //creo un oggetto di tipo Piccione
+
+
+                  a1.sopstare();    //applico il metodo spostare() al'oggetto Animale
+
+                  a2.sopstare();    //applico il metodo spostare() al'oggetto Cane
+
+                  a3.sopstare();    //applico il metodo spostare() al'oggetto Cavallo
+
+                  a4.sopstare();    //applico il metodo spostare() al'oggetto Pesce
+
+                  a5.sopstare();    //applico il metodo spostare() al'oggetto Piccione
+
+                  }
+
+          }
+

@@ -1,0 +1,108 @@
+Enumerazioni
+
+    Tipo Enum
+
+    modo per vincolare una variabile a poter assumere solo un determinato set di valori.
+
+        public enum Giorno {
+            LUNEDI,
+            MARTEDI,
+            MERCOLEDI,
+            GIOVEDI,
+            VENERDI,
+            SABATO,
+            DOMENICA // opzionalmente può terminare con ";"
+        }
+
+        Giorno giornoDellaSettimana = Giorno.VENERDI;   // definisco una variabile di tipo giorno e ci metto dentro VENERDI
+
+
+
+METODO STATICO()
+
+    values()    // ritorna un array di tutti i possibili valori che
+                // potranno assumere le variabili di tipo enum scelto
+
+
+        Giorno g = Giorno.valueOf("SABATO");    //assegnerà alla variabile g il valore Giorno.SABATO
+
+                ATTENZINE la stringa "SABATO" deve contenere gli stessi caratteri contenenti in enum Giorno
+                          non puo essere SabAto e bisogna evitare anche possibili spazi
+
+
+
+//stampare tutti gli elementi di un enumeratore
+
+enum ValoreCarta { uno , due , tre , quattro , cinque };	//creo enumeratore 
+
+		//stampare tutti gli elementi di un enumeratore
+		for( ValoreCarta each : ValoreCarta.values()  ) {
+			System.out.println(each); 
+		}
+		
+		//restituire il valore interno di una variabile di tipo enum
+		System.out.println( valore.name() );
+		
+		//ritorna la posizione nella lista enum del valore presente nella variavile enum
+		System.out.println( valore.ordinal() );
+		
+		//comparazioni tra enum, l’ordine è quello indotto dalla dichiarazione dell’enum
+		ValoreCarta valore2 = ValoreCarta.uno;
+
+		if(valore.compareTo(valore2)==0) {
+			System.out.println("valore = valore2");
+		}else if(valore.compareTo(valore2)>0) {
+			System.out.println("valore > valore2");
+		}else {
+			System.out.println("valore < valore2");
+		}
+		
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+		//E’ possibile aggiungere informazioni alle costanti enum.
+		//Si inserisce tra parentesi un valore per ogni costante
+
+		public enum Taglia {
+	
+			STRETTO(42 , 30),
+			MEDIO(44 , 50),
+			LARGO(46 , 80);
+		
+		
+			private int misura1;
+			private int misura2;
+	
+		private Taglia(int a , int b) {
+			this.misura1 = a;
+			this.misura2 = b;
+		}
+		
+		public int  getMisura1(){
+			return this.misura1;
+		}
+		
+		public int  getMisura2(){
+			return this.misura2;
+		}
+		
+		public void setMisuraNuova1( Taglia abito ) {
+			this.misura1 = abito.getMisura1();  
+		}
+		
+}
+	-	-	-	-	-	-	-	-	-	-	-	-
+		//codice da eseguire ne main
+		
+		Taglia abito = Taglia.LARGO;
+		
+		System.out.println( abito.getMisura1()  );
+		
+		System.out.println("E troppo largo!!!");
+		abito.setMisuraNuova1(Taglia.MEDIO);;
+		
+		System.out.println( abito.getMisura1()  );
+		System.out.println("Ora va meglio");
+
+		
+		

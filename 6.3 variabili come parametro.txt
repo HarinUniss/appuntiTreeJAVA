@@ -1,0 +1,89 @@
+DICHIARAZIONE DI UN METODO
+
+    es:
+        public static void displayPerimetro();{
+            int perimetro = 2*(1+2);
+            System.out.println(perimetro);  // -> 6
+        }
+
+FUNZIONE CON DEI PARAMETRI O ARGOMENTI
+
+    I parametri sono variabili elencate nell'istruzione function e
+                sono specificati tra parentesi con il nome e il tipo.
+
+    ES:
+        public static void displayPerimetro( int larghrzza , int altezza ){
+            int perimetro = 2 * ( larghezza + altezza );
+            System.out.println(perimetro);
+            // Il valore che viene stampato dipende dai valori altezza e larghezza
+        }
+
+DEFINIRE UN VALORE DI RITORNO
+
+    Per impostare un valore restituito, è necessario:
+
+        1 Modificare l'istruzione della funzione per indicare che si prevede che restituisa un risultato
+                                                ( togliere void e specificare il tipo che deve restituire ).
+
+        2 Terminare la funzione con la parola chiave."return"
+
+        ES: restituisce un int
+                           |
+                           v
+            public static int sum(int a, int b){
+                return a + b;   // restituisce il valore a+b
+            }
+
+
+
+DIFFERENZA TRA TIPI VALORE E TIPI DI RIFERIMENTO
+
+    TIPI VALORE
+            Se si crea un TIPO VALORE "int" e quindi la si assegna a un'altra variabile,
+            il valore della prima variabile verrà copiato nella seconda:
+
+
+                int a = 10;
+                int b = a;      // b=10
+
+            Poiché "int" è un TIPO VALORE, una copia del valore di viene assegnata a.
+            Ciò significa che se in seguito si modifica il valore di (a), il valore di (b) non verrà modificato.
+
+                a = 15;
+                System.out.println(a); // -> 15
+                System.out.println(b); // -> 10
+
+    TIPI DI RIFERIMENTO (PUNTATORI)
+            Quando si crea una variabile e le si assegna un'istanza di classe,
+            l'oggetto viene creato, ma la variabile stessa contiene un RIFERIMENTO all'oggetto istanziato.
+            (RIFERIMENTO alla posizione in cui viene archiviato l'oggetto nella memoria).
+
+            Quando si assegna il valore di questa variabile a un'altra variabile,
+                l'oggetto stesso NON verrà copiato e la nuova variabile MA!!! conterrà un RIFERIMENTO a tale oggetto (lo stesso indirizzo).
+
+            ES:
+                public class Car {      //creo la classe Car
+                    String color = "red";
+                }
+
+                Car auto = new Car();   //creo un puntatore che punta allo oggetto auto di tipo Car
+                Car autoDaPitturare = auto; //creo un puntatore che punta allo stesso oggetto auto di tipo Car
+
+                System.out.println(auto.color); // -> red
+                System.out.println(autoDaPitturare.color); // -> red
+
+                carToPaint.color = "yellow";    //cambio il colore dell'auto (cambio il colore di )
+
+                System.out.println(auto.color); // -> yellow
+                System.out.println(autoDaPitturare.color); // -> yellow  sia il colore di "auto" che quello di "autoDaPitturare" cambiano colore perche puntano allo stesso oggetto
+
+            QUANDO SI DANNO COME ARGOMENTI DEI TIPI DI RIFERIMENTO
+                    le operazioni interne alla funzione che li riceve potrebbero MODIFICARE L'OGGETTO!!!
+
+
+
+
+
+
+
+

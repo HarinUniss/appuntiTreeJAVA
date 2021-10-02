@@ -1,0 +1,20 @@
+
+        /* FASE DI COMPILAZIONE DA TERMINALE  */
+
+              1. Compilare il programma con il comando javac.
+
+                  $ javac conditions/ConditionalHello.java
+
+              2. Eseguire il programma senza argomenti.
+
+                  $ java conditions/ConditionalHello
+                  Ciao tizio che non so chi sei!
+                  $
+
+              3. Eseguire il programma aggiungendo "Mario" dopo il nome della classe.
+
+              $java conditions/ConditionalHello Mario
+              Ciao Mario!
+              $
+
+
