@@ -1,0 +1,27 @@
+Test
+
+Codice che mi permette di verificare se unna paarte di codice funziona oppure no 
+
+	
+	i nomi dei Test devono rispettare una logica e rispondere a 3 parole chiave
+
+	Given 	ParametriInseriti
+	When	SpecificaContesto
+	Then	RisultatoCheSiAspetta
+	
+
+    //es costruttore 1
+    @Test
+    public void Given_Niente_When_RichestaElencoMenu_Then_VisualizzazioneElencoMenuVegetariano() {
+        order.mostraMenuDisponibili();
+        assertEquals(false, outContent.toString().isEmpty());
+    }
+
+    //es costruttore 2
+    @Test
+    public void Given_Veetariano_When_RichestaElencoMenu_Then_VisualizzazioneElencoMenuVegetariano() {
+        order.mostraMenuScelto(3);
+        assertEquals( "Avete scelto il menu 3\n", outContent.toString().replace("\r\n", "\n") );
+    }
+
+    

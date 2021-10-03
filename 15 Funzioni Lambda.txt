@@ -1,0 +1,128 @@
+FUNZIONI LAMBDA
+
+conla funzione LAmbda posso referenziare un pezzo di codice in una variabile
+questo successivamente puo essere utilizzato come campo di una classe o un parametro di un altra funzione.
+
+ottima alternativa alle CLASSI ANOMIME 
+
+COSA VOLEVA DIRE REFERENZIARE?
+fare riferimento a un nome per indicare un qualcosa
+
+	referenziazione ad un tipo primitivo 	int cpt = 0;
+
+	referenziazione a un istanza di oggetto 	FigureGeo myFigureGeo  = new FigureGeo();
+
+
+
+Per arrivare alle chiusure e utilizzare le lambda, Java 8 
+ha introdotto quelle che vengono chiamate interfacce funzionali.
+
+
+
+Un espressione Lambda é sempre:
+	<lista di parametri> -> <corpo della funzione>
+
+<lista di parametri>		Specifica i parametri di input del singolo metodo dell'interfaccia funzionale
+				questi  verranno inseriti tra parentesi () 
+				e non é obbligatorio specificare il tipo
+
+	->			Questo è il marcatore dell'espressione Lambda. 
+				Separa l'elenco dei parametri dal corpo della funzione
+
+<corpo della funzione>		da scrivere tra {} ammeno che non sia solo un operazione
+
+
+
+() -> azione 
+
+(parametro, ...) -> azione 
+
+(parametro, ...) -> {operazioni, ritorna qualcosa}
+
+
+CORPO DELLA FUNZIONE LAMBDA
+	
+
+	può non avere nessuna, una o più istruzioni;
+
+	quando contiene una sola istruzione, le parentesi graffe non sono necessarie e il valore restituito è quello dell'istruzione se ne ha una.
+
+	quando ci sono diverse istruzioni, devono essere circondate da parentesi graffe;
+
+	il valore restituito è quello dell'ultima espressione o void se non viene restituito nulla
+
+
+
+
+-------------------------------------------------------------
+ESEMPIO 1
+	
+//la nostra interfaccia funzionale
+public interface Studente {
+    void dareNome();	//metodo che restituisce il nome 
+}
+
+//utilizzo
+public static void main(String[] args) {
+    Studente s1 = () -> {System.out.println("Mario");};
+    s1.dareNome();	//stampa Mario
+}
+
+--------------------------------------------------------------
+ESEMPIO 2
+
+//la nostra interfaccia funzionale
+public interface Studente {
+    void dareNome(String nome);
+}
+
+//Utilizzo
+public static void main(String[] args) {
+    Studente s1 = (NomeDaDare) -> {System.out.println(“Mi chiamo “ + NomeDaDare);};
+    s1.dareNome("Mi chiamo Mario");    //Stamperá Mario
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
