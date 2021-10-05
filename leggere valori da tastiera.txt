@@ -5,3 +5,14 @@ int n = scan.nextInt();
 Scanner scan = new Scanner(System.in);
 System.out.println("inserire il nome di un mese");
 String mese = scan.next()
+
+
+
+RECUPERARE FEASE CHE VIENE STAMPATA A SCHERMO 
+
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();	//oggetto che mi permette di leggere a schermo
+
+	String output = outContent.toString().replace("\r\n", "\n");
+
+
+	//  .replace("\r\n", "\n");  //metodo usato per essere sicuri che sia su amc che su windows l'accapo venga letto su cshermo in modo corretto

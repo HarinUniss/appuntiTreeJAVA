@@ -1,6 +1,10 @@
 Test
 
-Codice che mi permette di verificare se unna paarte di codice funziona oppure no 
+Test Driven Development
+
+	metodo utilizzato per un corretto sviluppo del software 
+	prima di sviluppare il software conviene generare dei test che 
+	vanno a verificare se il programma che andremo a costruire funzion
 
 	
 	i nomi dei Test devono rispettare una logica e rispondere a 3 parole chiave
@@ -25,3 +29,21 @@ Codice che mi permette di verificare se unna paarte di codice funziona oppure no
     }
 
     
+
+STRUTTURA BASE TEST PER UN METODO 
+
+
+    @Test
+    public void Given_<parametriInseriti>_When_<SpecificaContesto>_Then_<RisultatoCheSiAspetta>() {
+        order.<nomeMetodoDaTestare>( <parametro1> , <parametro2> , <...> );
+
+	//recupero la frase che viene stampata a schermo se ne viene stampata una
+        String output = outContent.toString().replace("\r\n", "\n");
+	//oppure analizzo qualche dato che viene ritornato dal metodo in test
+
+	//comparo il risultato con il valore o la stringa che mi aspetto dal metodo
+        assertEquals("Vous avez choisi comme accompagnement : légumes frais\n", output);
+    }
+
+		
+
