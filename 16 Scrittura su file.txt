@@ -1,0 +1,121 @@
+FORMATO FILE CSV
+
+per crearlo e sufficiente scrivere in un file txt e rinominarlo .csv
+
+viene strutturato in modo tabellare con delle colonne con sopra 
+il tipo di elemento e con le colonne separate da virgole.
+
+
+ESEMPIO
+nom,age,ville
+Alexis,18,Paris
+Vincent,31,Bordeaux
+Maevan,26,Marseille
+Jean,54,Lyon
+
+
+PER SCRIVERE IN UN FILE 
+
+
+	1 CREARE OGETTO CHE CONTIENE IL PERCORSO DEL FILE 
+
+		si utilizza un oggetto di tipo Paths
+
+		Paths percorsoFile1 = Paths.get("cartella\nomeFile.csv");
+
+		get(String first, String... more)
+			Converte una stringa di percorso o una sequenza di stringhe che, 
+			una volta unite, formano una stringa di tracciato, in un file .Path
+
+		static Path	get(URI uri)
+			Converte l'URI specificato in un oggetto Path
+
+
+		
+	
+
+
+	2 CREARE UN OGGETTO FILES
+
+		si utilizza la classe Files 
+			contiene dei metodi statici che permettono di fare operazioni sui files
+		
+		si possonool utilizzare i seguenti costruttori:
+
+		File(String pathDir)
+		File(String pathDir,String nomeFile)
+		File(File dirObj,String nomeFile)
+
+		Esempio di utilizzo 
+
+		File f1 = new File(/);
+		File f3 = new File(f1,autoexec.bat);
+		File f3 = new File(/autoexec.bat);
+		File f3 = new File(/,autoexec.bat);
+
+
+
+	boolean exists()		Restituisce true se loggetto File si riferisce ad un file che esiste
+
+	boolean isDirectory()		Restituisce true se loggetto File si riferisce ad una directory
+
+	boolean isFile()		Restituisce true se loggetto File si riferisce ad un file regolare
+
+	String getName()		Restituisce il nome del file referenziato dalloggetto File
+
+	String getAbsolutePath()	Restituisce il percorso completo del file ref. dall'oggetto File
+
+	int length()			Restituisce la dimensione del file
+
+	boolean renameTo(File f)	Il nome del file specificato dal parametro diventa il nuovo nome delloggetto file. 
+					Restituisce true in caso di successo.
+
+	boolean delete()		Cancella il file referenziato dalloggetto File.
+
+
+	Se loggetto File si riferisce ad una directory, i due metodi restituiscono la lista dei file e 
+	delle directory presenti sottoforma di un array di stringhe o di oggetti File.
+
+		String[] list()
+		File[] listFiles()
+
+
+	Un ultima osservazione: le classi che agiscono sui flussi come FileInputStream o FileWriter, 
+	ammettono un costruttore che prende in ingresso direttamente un oggetto file. 
+	Ad esempio se f è un oggetto File si può scrivere
+
+	FileInputStream in = new FileInputStream(f);
+	FileWriter out = new FileWriter(f);
+
+
+
+
+LEGGERE FILES CSV
+
+jshell> List<String> lines = Files.readAllLines(orderPath);
+lines ==> [menu,accompagnement,boisson, 1,2,3, 2,3,-1, 3,2,2]
+
+jshell> for (int i = 1; i < lines.size(); i++) {
+   ...> System.out.println(lines.get(i));
+   ...> }
+1,2,3
+2,3,-1
+3,2,2
+
+jshell> lines.get(2).split(",");	//da notare che scarto la virgola con split()
+$20 ==> String[3] { "2", "3", "-1" }
+
+jshell> lines.get(2).split(",")[2];
+$21 ==> "-1"
+
+
+
+
+
+
+
+
+
+
+
+

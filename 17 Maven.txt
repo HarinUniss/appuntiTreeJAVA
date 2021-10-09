@@ -1,0 +1,28 @@
+Maven è uno strumento per gestire la costruzione e le dipendenze dei tuoi progetti Java.
+
+CREARE UN NUOVO PROGETTO MAVEN SU ECLIPSE
+	
+	File -> New -> Project -> Maven -> Maven Project -> 
+
+	-> Create a simple project (skip archetype selection) -> Next
+
+	inserire nel Group ID il percorso del package es: it.azienda.qualcosa
+
+
+
+INTERNO DEL PROGETTO MAVEN 
+
+	src/main/java: 		il tuo codice sorgente Java organizzato in pacchetti per la tua applicazione o libreria;
+
+	src/main/resources: 	file di risorse di cui il codice Java potrebbe aver bisogno;
+
+	src/test/java: 		il codice sorgente dei test, in particolare gli unit test JUnit;
+
+	src/test/resources: 	file di risorse di cui il codice di test potrebbe aver bisogno.
+
+
+AGGIUNTA LIBRERIE
+
+	Nella cartella MAVEN DEPENDENCE aggiungere le librerie che ci interessano 
+	tra le due ward <dependencies></dependencies>
+	dopo di che CTRL + S per far scaricare a eclipse le librerie 
