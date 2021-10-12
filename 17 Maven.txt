@@ -1,3 +1,9 @@
+INSTALLARE MAVEN SU WINDOWS 
+https://www.youtube.com/watch?v=RfCWg5ay5B0	//Come installare MAVEN su WINDOWS 10 | Passo dopo passo
+
+
+
+
 Maven è uno strumento per gestire la costruzione e le dipendenze dei tuoi progetti Java.
 
 CREARE UN NUOVO PROGETTO MAVEN SU ECLIPSE
@@ -26,3 +32,266 @@ AGGIUNTA LIBRERIE
 	Nella cartella MAVEN DEPENDENCE aggiungere le librerie che ci interessano 
 	tra le due ward <dependencies></dependencies>
 	dopo di che CTRL + S per far scaricare a eclipse le librerie 
+
+
+
+-------------------------------------------------------------------------------------------------------
+ARBORESCENZA PROGETTI MAVEN 
+
+maven genera automaticamente degli "Archetypes" 
+uno scheletro che permette di organizzare in modo corretto il proprio progetto.
+
+🗁 mia-applicazione
+├── 🗎 pom.xml
+└── 🗁 src
+    ├── 🗁 main
+    │   └── 🗁 java
+    │       └── 🗁 org
+    │           └── 🗁 exemple
+    │               └── 🗁 demo
+    │                   └── 🗎 App.java
+    └── 🗁 test
+        └── 🗁 java
+            └── 🗁 org
+                └── 🗁 exemple
+                    └── 🗁 demo
+                        └── 🗎 AppTest.java
+
+
+
+CREARE QUESTA ARBORESCENZA TRAMITE LA BASH
+
+   1  Apri un terminale (o una console) e vai alla directory in cui desideri creare il progetto 
+	(Maven creerà una sottodirectory per il tuo nuovo progetto lì)
+
+	cd /percorso/verso/cartella/progetto
+
+
+   2  Inizia a generare dall'archetipo:
+
+	mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.1
+	
+
+   3  Maven ti farà domande per personalizzare la generazione del tuo progetto:
+
+		groupId: org.exemple.demo		//pakage del progetto
+
+		artifactId: mia-appicazione		//nome del progetto
+
+		versione (1.0-SNAPSHOT): lasciare vuoto
+
+		pacchetto (org.example.demo): lasciare vuoto
+
+   4  Quindi Maven ti chiede di confermare le impostazioni, quindi devi solo premere il tasto.
+
+		INVIO
+
+
+   5  Maven crea lo scheletro del progetto: 
+	dovresti vedere un risultato come questo:
+
+	[INFO] ------------------------------------------------------------------------
+	[INFO] BUILD SUCCESS
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Total time: 28.944 s
+	[INFO] Finished at: 2017-06-12T17:26:46+02:00
+	[INFO] Final Memory: 19M/308M
+	[INFO] ------------------------------------------------------------------------
+
+
+
+
+	MAVEN ha dunque creato un arborescenza uguale a questa 
+
+		🗁 mia-applicazione
+		├── 🗎 pom.xml
+		└── 🗁 src
+    		├── 🗁 main
+    		│   └── 🗁 java
+    		│       └── 🗁 org
+   		│           └── 🗁 exemple
+    		│               └── 🗁 demo
+   		│                   └── 🗎 App.java
+    		└── 🗁 test
+       		    └── 🗁 java
+            	        └── 🗁 org
+                            └── 🗁 exemple
+                                └── 🗁 demo
+                                    └── 🗎 AppTest.java
+
+	
+	Un file pom.xml alla base del mio progetto. 
+		Questo è il file di descrizione/configurazione del progetto Maven.
+		troverete i parametri inseriti durante la generazione (groupId, artifactId, version) :
+
+
+			<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+			  <modelVersion>4.0.0</modelVersion>
+
+			  <groupId>org.exemple.demo</groupId>
+			  <artifactId>mia-applicazione</artifactId>
+			  <version>1.0-SNAPSHOT</version>
+			  <packaging>jar</packaging>
+
+			  <name>mia-applicazione</name>
+			  <url>http://maven.apache.org</url>
+
+			  <properties>
+			    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+			  </properties>
+
+			  <dependencies>
+			    <dependency>
+			      <groupId>junit</groupId>
+			      <artifactId>junit</artifactId>
+			      <version>3.8.1</version>
+			      <scope>test</scope>
+			    </dependency>
+			  </dependencies>
+			</project>
+
+			Si noti inoltre che l'applicazione ha una dipendenza "test" da JUnit versione 3.8.1. in questo caso.
+
+
+
+	Una directory src/main/java. 
+		Questa è la directory contenente i sorgenti della mia applicazione, 
+		contenente per il momento un singolo file App.java situato nel package org.exemple.demo.
+
+			il file App.java conterrá un semplice Hello world
+
+
+	una directory src/test/java. 
+		Questa è la directory contenente i sorgenti dei test JUnit della mia applicazione,
+	  	contenente per il momento un singolo file AppTest.java situato nel package org.exemple.demo.
+
+----------------------------------------------------------------------------------------------------
+
+CREARE UN NUOVO PROGETTO CALLA BASH 
+
+	1 	Aprire una console nella radice del progetto (directory mia-applicazione), 
+		in cui si trova il file pom.xml
+
+	2	digitare:
+			mvn package
+
+	3	Aspetta un po'e... Tada! Hai un JAR della tua applicazione: 
+		target/mia-applicazione-1.0-SNAPSHOT.jar		
+
+	4	Ma Maven non ha semplicemente generato un JAR. 
+		Guarda l'output visualizzato sulla console, dovresti avere qualcosa del genere:
+
+
+				[INFO] Scanning for projects...
+				[INFO] 
+				[INFO] ------------------------------------------------------------------------
+				[INFO] Building mia-applicazione 1.0-SNAPSHOT
+				[INFO] ------------------------------------------------------------------------
+				[INFO] 
+				[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mia-applicazione ---
+				[INFO] Using 'UTF-8' encoding to copy filtered resources.
+				[INFO] skip non existing resourceDirectory /projets/mia-applicazione/src/main/resources
+				[INFO] 
+				[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ mon-appli ---
+				[INFO] Changes detected - recompiling the module!
+				[INFO] Compiling 1 source file to /projets/mia-applicazione/target/classes
+				[INFO] 
+				[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mon-appli ---
+				[INFO] Using 'UTF-8' encoding to copy filtered resources.
+				[INFO] skip non existing resourceDirectory /projets/mia-applicazione/src/test/resources
+				[INFO] 
+				[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ mia-applicazione ---
+				[INFO] Changes detected - recompiling the module!
+				[INFO] Compiling 1 source file to /projets/mia-applicazione/target/test-classes
+				[INFO] 
+				[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ mon-appli ---
+				[INFO] Surefire report directory: /projets/mia-applicazione/target/surefire-reports
+
+				-------------------------------------------------------
+				 T E S T S
+				-------------------------------------------------------
+				Running org.exemple.demo.AppTest
+				Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+
+				Results :
+
+				Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+				[INFO] 
+				[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ mon-appli ---
+				[INFO] Building jar: /projets/mon-appli/target/mia-applicazione-1.0-SNAPSHOT.jar
+				[INFO] ------------------------------------------------------------------------
+				[INFO] BUILD SUCCESS
+				[INFO] ------------------------------------------------------------------------
+				[INFO] Total time: 1.307 s
+				[INFO] Finished at: 2017-06-12T18:50:44+02:00
+				[INFO] Final Memory: 16M/209M
+				[INFO] ------------------------------------------------------------------------
+					
+
+
+		Infatti, Maven ha:
+
+		copiato le risorse dell'applicazione (tornerò su questo più tardi)
+
+		origini delle applicazioni compilate
+
+		origini di test compilate
+
+		esecuzione di test sull'applicazione (1 esecuzione di test, nessun errore)
+
+		generato un JAR dell'applicazione
+
+
+    4 Puoi avviare la tua nuova applicazione Java:	
+    
+    		java -cp target/mia-applicazione-1.0-SNAPSHOT.jar org.exemple.demo.App	
+
+    		Che dovrebbe mostrarti un bellissimo:
+
+			Hello World!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

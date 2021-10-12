@@ -1,0 +1,167 @@
+Window -> Perspective -> Open Perspective -> Other  -. troviamo la voce Git
+
+
+A sinistra, il plug-in Git consente di:
+
+	aggiungere un repository locale
+
+	clonare un repository Git 
+
+	creare un nuovo repository Git locale
+
+
+---------------------------------------------------------------------------------------------------
+
+ESEMPIO CHE CREA UN REPOSITORY DI UN PROGETTO 
+fastjson, una libreria Java per elaborare un formato di file molto utile in fase di sviluppo: JSON.
+
+1 Fare clic su Clona un repository. Verrà aperta una procedura guidata in più passaggi.
+
+2 In URL digitare il link del reposytori che vogliamo copiare
+		https://github.com/alibaba/fastjson e fare clic su Avanti.
+
+3 La finestra successiva mostra tutti i rami disponibili. Fare clic direttamente su Avanti.
+
+4 Scegli laposizione di destinazione sul tuo computer. Quindi fare clic su Fine.
+
+5 Un nuovo repository viene visualizzato in Git Repositories. 
+		Fai clic su di esso una volta, avrai quindi accesso a una scheda 
+		che visualizza la cronologia delle modifiche al codice.
+
+---------------------------------------------------------------------------------------------------
+
+EFFETTUARE UNA PULL REQUEST
+
+	1 Creare un repository clone del progetto sul proprio spazio GitHub (fork/ramificazione).
+
+	2 Creare il codice della patch in questo repository e in un ramo specifico.
+
+	3 Proponi la sua modifica ad altri sviluppatori creando una richiesta pull.
+
+	4 I contributori del progetto discutono, accettano o rifiutano questa proposta 
+	  nel thread della richiesta pull.
+
+
+--------------------------------------------------------------------------------------------------
+USARE ECLIPSE PER INVIARE CORREZIONI A GITHUB
+
+
+	1 Effettuare il fork 
+		è un'azione in GitHub che ti consente di creare una copia 
+		di un progetto ufficiale sul tuo spazio GitHub.
+
+		Ciò ti consente di apportare modifiche o evoluzioni a un progetto dalla tua parte, 
+		quando non hai i diritti per modificare il progetto ufficiale.
+
+		Quando facciamo il fork, creiamo una copia su un ALTRO spazio GitHub (il nostro).
+
+		Quando si clona, si crea una copia sul proprio computer e tale copia 
+		non è visibile a nessuno tranne che a te.
+
+
+		ESEMPIO 
+			Dalla pagina del progetto che ci interessa, 
+			fai clic sul pulsante Fork in alto a destra.
+
+			A destra del pulsante Fork: c'è un numero. 
+			Questo è il numero di volte in cui il progetto è stato biforcato su GitHub! 
+	
+			Si noti che l'URL del progetto è cambiato. Sei nel tuo spazio, 
+			il progetto ha lo stesso nome, ma vedi in alto a sinistra dello schermo 
+			l'identificatore del tuo spazio e un'indicazione che il progetto 
+			è stato biforcato da un altro repository.
+	
+
+
+	2 Clonare il progetto 
+			
+		copiare il link del nostro frok
+
+		tornare su eclipse nella visione GIT e cliccare 
+		sul disegnino dorato con una freccetta verde con la scritta 
+		"Clone a Git Repository and add the clone to this view"
+
+		copiare l'indirizzo del repository nel campo URL
+
+		next e poi scegliere il percorso su disco dove clonare
+
+	2.1 	cambiare prospettiva e mettere quella java
+		Window -> Perspective -> Open Perspective -> Other...
+
+
+	3 Effettuare un commit
+
+		Clic con il pulsante destro su l progetto → Team → Commit 
+
+		Vedrai che il file che è stato modificato viene visualizzato nella scheda "Git Staging"
+		I file modificati dovrebbero ora essere visualizzati nella finestra 
+
+		Qui, Eclipse ti consente di eseguire il commit e il push su GitHub in un unico passaggio. 
+		Specificare un messaggio nell'inserto Commit Message, è obbligatorio, 
+		in modo da spiegare in poche parole quali modifiche vengono apportate. 
+		Quindi fare clic su Commit e Push
+
+	
+
+	4 Proporre la modifica
+		cliccare sul menu in alto a sinistra "Pull request"
+
+		aprirá una finestra dove si vedono tutte le modifiche aportate al file 
+	
+
+		andare su "Create pul request"
+	
+		Giustifichiamo la nostra richiesta con del testo , dopodiche la inviamo "Create pul request"
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
