@@ -1,0 +1,74 @@
+SERIALIZZARE UN OGGETTO 
+
+	salvo lo stato dell'oggetto ovvero i suoi valoiri interni 
+	Questo stato verrá tenuto anche dopo la chiusura del programma
+
+
+
+		public class Nome_classe implements Serializable {
+
+
+				private  String parametro1;
+
+				private  Int parametro2;
+
+				private  String parametro3;
+
+				private  Double parametro4;
+
+				private transient String parametro5;		//se non voglio che il parametro5 venga serializzato uso transient
+
+				private  String parametro6;
+
+		}
+
+
+		-----------------------------------------------------------
+
+		public static void main(String args[]) throw ClassNotFoundException {
+
+			Nome_classe oggetto1 = new Nome_classe(p1, p2, p3, p4, p5, p6);
+
+			FileOutputStream fileOutput;	//file su cui andiamo a scrivere
+
+			FileInputStream	fileInput;	//file su cui andiamo a leggere
+
+			ObjectOutputStream streamOutput;	// aggiunge il metodo writeObject che facilita la serializzazione
+			ObjectInputStream streamInput;	// aggiunge il metodo readObject che facilita la serializzazione
+			
+
+
+			// scrittura su file 
+			try {
+				fileOutput = new FileOutputStream( new File( "file.txt"));
+				streamOutput = new ObjectOutputStrream(fileOutput);
+
+				streamOutput.writeObject( oggetto );
+				streamOutput.close();
+
+				System.out.println( "Oggetto serializato con successo" );
+
+
+			} catch(IOException ex) {
+				ex.printStackTrace();
+			}
+
+
+
+			//lettura da file 
+			try {
+				fileInput = new FileInputStream( new File( "file.txt"));
+				streamInput = new ObjectInputStrream( fileInput );
+
+				Nome_classe ogetto2 = (Nome_classe) streamInput.readObject();
+
+				System.out.println( "Ogetto deserializzato " + oggetto2 );
+
+
+			} catch(IOException ex) {
+				ex.printStackTrace();
+			}
+
+
+
+		}
