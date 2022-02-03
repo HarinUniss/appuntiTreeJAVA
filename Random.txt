@@ -1,0 +1,28 @@
+
+
+int n = (int)(Math.random()*10+1);//inserisco un numero da 0 a 10 all'interno di n
+
+
+
+
+//inizzializzazione lista 1
+
+	 	LinkedList<Integer> lista1 = new LinkedList<Integer>();
+
+        for(int i=0 ; i<n ; i++) {
+            int rand = (int)(Math.random()*10); //numero intero random tra 0 e 10
+            lista1.add(rand);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        

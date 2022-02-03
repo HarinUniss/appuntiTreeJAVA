@@ -41,21 +41,27 @@ DICHIARAZIONE
 lista.add(element); 		Aggiunge alla lista un elemento in ultima posizione
 lista.add(index, element); 	Aggiunge alla lista un elemento nella posizione specificata (indice)
 lista.addAll(lista2); 		Aggiunge tutti gli elementi della lista2 nella lista
-lista.get(index); 		Recupera l’element della posizione specificata
+lista.get(index); 			Recupera l’element della posizione specificata
 lista.set(index,value); 	Sostituisce l’element nella posizione specificata con il valore passato
 lista.indexOf(element); 	Recupera la posizione dell’element
-lista.size(); 			Indica la dimensione della lista (numero di elementi)
-lista.isEmpty(); 		Indica se la lista è vuota o piena
-lista.clear(); 			Svuota la lista
+lista.size(); 				Indica la dimensione della lista (numero di elementi)
+lista.isEmpty(); 			Indica se la lista è vuota o piena
+lista.clear(); 				Svuota la lista
 lista.remove(index); 		Rimuove l’element che si trova in una determinata posizione
-lista.forEach(..) 		Permette di iterare gli elementi della lista
-lista.toArray(); 		Trasforma la lista in un array
+lista.forEach(..) 			Permette di iterare gli elementi della lista
+lista.toArray(); 			Trasforma la lista in un array
+
+
+
 
 
 
 
 ITERAZIONE LISTE
 	
+	//stampa lista 
+
+
 	for ( int i = 0 ; i < lista.size(); i++){
 	     System.out.println( lista.get(i) );
 	}
@@ -178,7 +184,8 @@ map.clear(); 		Svuota la mappa
 map.containsKey(key); 	Indica se la mappa contiene la chiave “key”
 map.forEach(..) 	Permette di iterare gli elementi dela mappa
 map.keySet(); 		Restituisce l’array delle chiavi della mappa
-
+map.entrySet();		
+map.values(); 		restituisce lista valori;
 
 Map iterare gli elementi
 

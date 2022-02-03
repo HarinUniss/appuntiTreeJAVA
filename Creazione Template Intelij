@@ -1,0 +1,18 @@
+
+ctrl + alt +s 
+
+Editor
+
+File and code Templates
+
+cliccare sul +
+
+#if (${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
+#parse("File Header.java")
+public class ${NAME} {
+	
+
+	//qui vaDO A SCRIVERE TUTTA LA CLASSE
+
+
+}
